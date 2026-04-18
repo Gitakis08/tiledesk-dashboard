@@ -751,7 +751,7 @@ export class SidebarUserDetailsComponent implements OnInit {
   }
 
   goToHelpCenter() {
-    const url = "https://gethelp.tiledesk.com/"
+    const url = "https://www.pobuca.com/"
     window.open(url, '_blank');
   }
 

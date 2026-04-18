@@ -1033,7 +1033,7 @@ export class TemplatesComponent extends PricingBaseComponent implements OnInit {
   }
 
   goToExternalCommunity() {
-    const url = "https://tiledesk.com/community/"
+    const url = "https://www.pobuca.com/"
     window.open(url, '_blank');
   }
 

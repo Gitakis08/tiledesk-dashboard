@@ -180,7 +180,7 @@ export class BotTypeSelectComponent implements OnInit {
   }
 
   openExternalBotIntegrationTutorial() {
-    const url = 'https://developer.tiledesk.com/external-chatbot/connect-your-own-chatbot';
+    const url = 'https://www.pobuca.com/';
 
     window.open(url, '_blank');
   }
@@ -200,7 +200,7 @@ export class BotTypeSelectComponent implements OnInit {
 
 
   openRasaIntegrationTutorial() {
-    const url = 'https://gethelp.tiledesk.com/articles/rasa-ai-integration/';
+    const url = 'https://www.pobuca.com/';
     window.open(url, '_blank');
   }
 

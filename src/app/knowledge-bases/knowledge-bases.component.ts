@@ -3680,7 +3680,7 @@ _presentDialogImportContents() {
 
   contactSalesForChatGptKey() {
     this.closeSecretsModal()
-    window.open(`mailto:support@tiledesk.com?subject=I don't have a GPT-Key`);
+    window.open(`mailto:support@pobuca.com?subject=I don't have a GPT-Key`);
   }
 
 

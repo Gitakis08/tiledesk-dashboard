@@ -3477,7 +3477,7 @@ export class ProjectEditAddComponent implements OnInit, OnDestroy, AfterViewInit
     if (this.ip_restrictions_on && allowedIPsArray.length > 0) {
       swal({
         title: "Are you sure?",
-        text: "Adding IP-based access restrictions can break Tiledesk access!",
+        text: "Adding IP-based access restrictions can break Pobuca Converse access!",
         icon: "warning",
         buttons: true,
         dangerMode: true,
@@ -3835,12 +3835,12 @@ export class ProjectEditAddComponent implements OnInit, OnDestroy, AfterViewInit
 
 
   goToWidgetAuthenticationDocs() {
-    const url = 'https://developer.tiledesk.com/widget/auth'
+    const url = 'https://www.pobuca.com/'
     window.open(url, '_blank');
   }
 
   goToWebhookDocs() {
-    const url = 'https://developer.tiledesk.com/apis/webhooks'
+    const url = 'https://www.pobuca.com/'
     window.open(url, '_blank');
   }
 

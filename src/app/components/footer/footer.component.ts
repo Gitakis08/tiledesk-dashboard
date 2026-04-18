@@ -157,7 +157,7 @@ export class FooterComponent implements OnInit {
 
 
   goToTiledeskGithub() {
-    const url = 'https://github.com/Tiledesk';
+    const url = 'https://www.pobuca.com/';
     window.open(url, '_blank');
   }
 }

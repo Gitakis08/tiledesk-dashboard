@@ -30,7 +30,7 @@ export class FormComponent implements OnInit, OnChanges {
 
   langBot: string;
   fields = new Array() as Field[];;
-  URL_to_form_more_info = "https://gethelp.tiledesk.com/articles/tiledesk-chatbot-forms/";
+  URL_to_form_more_info = "https://www.pobuca.com/";
 
   // modal
   displayMODAL = false;

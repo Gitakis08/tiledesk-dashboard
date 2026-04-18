@@ -240,7 +240,7 @@ export class WidgetSetUp extends WidgetSetUpBaseComponent implements OnInit, Aft
       "Phone": "Phone",
       "Invalid email address": "Invalid email address",
       "Your message for the support team": "Your message for the support team",
-      "Before proceeding in the conversation please agree to our <a href='https://tiledesk.com/termsofservice/' target='_blank'>Terms</a> and <a href='https://tiledesk.com/privacy.html' target='_blank'>Privacy Policy</a>": "Before proceeding in the conversation please agree to our <a href='https://tiledesk.com/termsofservice/' target='_blank'>Terms</a> and <a href='https://tiledesk.com/privacy.html' target='_blank'>Privacy Policy</a>",
+      "Before proceeding in the conversation please agree to our <a href='https://www.pobuca.com/termsofservice/' target='_blank'>Terms</a> and <a href='https://www.pobuca.com/privacy.html' target='_blank'>Privacy Policy</a>": "Before proceeding in the conversation please agree to our <a href='https://www.pobuca.com/termsofservice/' target='_blank'>Terms</a> and <a href='https://www.pobuca.com/privacy.html' target='_blank'>Privacy Policy</a>",
       "I agree": "I agree",
       "This field is required": "This field is required"
     }
@@ -4832,12 +4832,12 @@ export class WidgetSetUp extends WidgetSetUpBaseComponent implements OnInit, Aft
     window.open(url, '_blank');
   }
   goToWidgetWebSdk() {
-    const url = 'https://developer.tiledesk.com/widget/web-sdk';
+    const url = 'https://www.pobuca.com/';
     window.open(url, '_blank');
   }
 
   goToPrechatFormExample() {
-    const url = 'https://developer.tiledesk.com/widget/advanced/prechat-form-json#examples';
+    const url = 'https://www.pobuca.com/';
     window.open(url, '_blank');
   }
 

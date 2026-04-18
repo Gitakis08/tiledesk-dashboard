@@ -1580,7 +1580,7 @@ export class TilebotComponent extends BotsBaseComponent implements OnInit {
   // Dialogflow bot doc link
   // -----------------------------------------------------------------------
   openDeveloperTiledeskGenerateDFCredentialFile() {
-    const url = 'https://developer.tiledesk.com/external-chatbot/build-your-own-dialogflow-connnector/generate-dialgoflow-google-credentials-file';
+    const url = 'https://www.pobuca.com/';
     window.open(url, '_blank');
   }
 
@@ -1606,12 +1606,12 @@ export class TilebotComponent extends BotsBaseComponent implements OnInit {
   // -----------------------------------------------------------------------
   openExternalBotIntegrationTutorial() {
     // const url = 'https://developer.tiledesk.com/apis/tutorials/connect-your-own-chatbot';
-    const url = 'https://developer.tiledesk.com/external-chatbot/connect-your-own-chatbot';
+    const url = 'https://www.pobuca.com/';
     window.open(url, '_blank');
   }
 
   openWebhookRequirementsDoc() {
-    const url = 'https://developer.tiledesk.com/resolution-bot-programming/webhook-data-model';
+    const url = 'https://www.pobuca.com/';
     window.open(url, '_blank');
   }
 

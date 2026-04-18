@@ -66,7 +66,7 @@ export class ActivateAppsumoProductComponent extends WidgetSetUpBaseComponent im
     this.tparams = brand;
     this.company_name = brand['BRAND_NAME'];
     this.company_site_url = brand['COMPANY_SITE_URL'];
-    this.contactSalesEmail = "sales@tiledesk.com"
+    this.contactSalesEmail = "sales@pobuca.com"
   }
 
   ngOnInit(): void {
@@ -404,7 +404,7 @@ export class ActivateAppsumoProductComponent extends WidgetSetUpBaseComponent im
     // }
     // window.open('mailto:' + this.contactUsEmail, 'mail')
     if (this.USER_ROLE === 'owner') {
-      window.open(`mailto:sales@tiledesk.com?subject=Support request for AppSumo license id project ${this.new_project._id}` );
+      window.open(`mailto:${this.contactSalesEmail}?subject=Support request for AppSumo license id project ${this.new_project._id}` );
     } else {
       this.presentModalOnlyOwnerCanManageTheAccountPlan()
     }
