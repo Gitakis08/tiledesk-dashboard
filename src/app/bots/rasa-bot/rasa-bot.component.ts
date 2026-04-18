@@ -275,7 +275,7 @@ export class RasaBotComponent implements OnInit {
   }
 
   openRasaIntegrationTutorial() {
-    const url = 'https://www.pobuca.com/';
+    const url = 'https://gethelp.tiledesk.com/articles/rasa-ai-integration/';
     window.open(url, '_blank');
   }
 

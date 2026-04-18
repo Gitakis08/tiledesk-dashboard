@@ -54,7 +54,7 @@ export class LoggerService {
             console.info('%c ### DSHBRD [LOGGER-SERV] Log Level: DEBUG ', 'color: #1a73e8' );
             this.logLevel = 3
           } else if (config.logLevel.toUpperCase() !== "ERROR" || config.logLevel.toUpperCase() === "WARN" || config.logLevel.toUpperCase() !== "INFO" || config.logLevel.toUpperCase() !== "DEBUG") {
-            console.error('logLevel has no valid value! Will be used the Debug log level. See the tiledesk-dashboard README.md available on https://www.pobuca.com/ ')
+            console.error('logLevel has no valid value! Will be used the Debug log level. See the tiledesk-dashboard README.md available on https://github.com/Tiledesk/tiledesk-dashboard#dashboard-configjson ')
             this.logLevel = 3 // debug
           }
         } else {
@@ -62,7 +62,7 @@ export class LoggerService {
           this.logLevel = 3 // debug
         }
       } else {
-        console.error('logLevel is not a string. Will be used the Debug log level. See the tiledesk-dashboard README.md available on https://www.pobuca.com/')
+        console.error('logLevel is not a string. Will be used the Debug log level. See the tiledesk-dashboard README.md available on https://github.com/Tiledesk/tiledesk-dashboard#dashboard-configjson')
 
         this.logLevel = 3 // debug
       }

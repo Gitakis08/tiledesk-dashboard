@@ -816,7 +816,7 @@ export class PricingComponent implements OnInit, OnDestroy {
   }
 
   goToComparePlan() {
-    let url = "https://www.pobuca.com/";
+    let url = "https://tiledesk.com/chatbot-features-pricing/#compare";
     window.open(url, '_blank');
   }
 

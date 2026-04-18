@@ -3,7 +3,7 @@ import { ActionAssignVariable, Intent } from "app/models/intent-model";
 import { v4 as uuidv4 } from 'uuid';
 
 export enum EXTERNAL_URL {
-    getchatbotinfo = "https://www.pobuca.com/"
+    getchatbotinfo = "https://tiledesk.com/community/getchatbotinfo/chatbotId/"
 }
 
 
@@ -171,7 +171,7 @@ export const ELEMENTS_LIST = [
     { name: 'Web Request', type: TYPE_ACTION.WEB_REQUEST, src:"assets/cds/images/actions/web_request.svg", description: ''},
     { name: 'Agent Handoff', type: TYPE_ACTION.AGENT, src:"assets/cds/images/actions/agent_handoff.svg", description: 'This action replaces the current chatbot with an agent.<br>The upcoming agent is assigned to the conversation following the department rules'},
     { name: 'Close', type: TYPE_ACTION.CLOSE, src:"assets/cds/images/actions/close.svg", description: 'This action instantly closes the current conversation'},
-    { name: 'Send email', type: TYPE_ACTION.EMAIL, src:"assets/cds/images/actions/send_email.svg", description: 'This action send an email to the specified users group or email addresses.<br>You can use a comma sepatated addresses list.<br>i.e. user1@pobuca.com, user2@pobuca.com"<br>You can use the special tag “@everyone” to send an email to each of the Pobuca Converse project teammates.<br><br>You can also use the name of a single user group using the group name. i.e. “sales”'},
+    { name: 'Send email', type: TYPE_ACTION.EMAIL, src:"assets/cds/images/actions/send_email.svg", description: 'This action send an email to the specified users group or email addresses.<br>You can use a comma sepatated addresses list.<br>i.e. user1@tiledesk.com, user2@tiledesk.com"<br>You can use the special tag “@everyone” to send an email to each of the Tiledesk’s project teamates.<br><br>You can also use the name of a single user group using the group name. i.e. “sales”'},
     { name: 'WhatsApp Static', type: TYPE_ACTION.WHATSAPP_STATIC, src: "assets/cds/images/actions/whatsapp.svg", description: 'This action send an approved WhatsApp template' },
     { name: 'WhatsApp by Attribute', type: TYPE_ACTION.WHATSAPP_ATTRIBUTE, src: "assets/cds/images/actions/whatsapp.svg", description: 'This action send an approved WhatsApp template' },
     { name: 'WhatsApp by Segment', type: TYPE_ACTION.WHATSAPP_SEGMENT, src: "assets/cds/images/actions/whatsapp.svg", description: 'This action send an approved WhatsApp template' },
@@ -198,7 +198,7 @@ export const ACTIONS_LIST= {
     WEB_REQUEST : { name: 'Web Request', type: TYPE_ACTION.WEB_REQUEST, src:"assets/cds/images/actions/web_request.svg", description: ''},
     AGENT : { name: 'Agent Handoff', type: TYPE_ACTION.AGENT, src:"assets/cds/images/actions/agent_handoff.svg", description: 'This action replaces the current chatbot with an agent.<br>The upcoming agent is assigned to the conversation following the department rules'},
     CLOSE : { name: 'Close', type: TYPE_ACTION.CLOSE, src:"assets/cds/images/actions/close.svg", description: 'This action instantly closes the current conversation'},
-    EMAIL : { name: 'Send email', type: TYPE_ACTION.EMAIL, src:"assets/cds/images/actions/send_email.svg", description: 'This action send an email to the specified users group or email addresses.<br>You can use a comma sepatated addresses list.<br>i.e. “andrea@pobuca.com, gab@pobuca.com"<br>You can use the special tag “@everyone” to send an email to each of the Pobuca Converse project teammates.<br><br>You can also use the name of a single user group using the group name. i.e. “sales”'},
+    EMAIL : { name: 'Send email', type: TYPE_ACTION.EMAIL, src:"assets/cds/images/actions/send_email.svg", description: 'This action send an email to the specified users group or email addresses.<br>You can use a comma sepatated addresses list.<br>i.e. “andrea@tiledesk.com, gab@tiledesk.com"<br>You can use the special tag “@everyone” to send an email to each of the Tiledesk’s project teamates.<br><br>You can also use the name of a single user group using the group name. i.e. “sales”'},
     WHATSAPP_STATIC: { name: 'WhatsApp Static', type: TYPE_ACTION.WHATSAPP_STATIC, src: "assets/cds/images/actions/whatsapp.svg", description: 'This action send an approved WhatsApp template' },
     WHATSAPP_ATTRIBUTE: { name: 'WhatsApp by Attribute', type: TYPE_ACTION.WHATSAPP_ATTRIBUTE, src: "assets/cds/images/actions/whatsapp.svg", description: 'This action send an approved WhatsApp template' },
     WHATSAPP_SEGMENT: { name: 'WhatsApp by Segment', type: TYPE_ACTION.WHATSAPP_SEGMENT, src: "assets/cds/images/actions/whatsapp.svg", description: 'This action send an approved WhatsApp template' },

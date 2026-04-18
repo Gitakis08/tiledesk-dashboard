@@ -87,7 +87,7 @@ export class CreateBotComponent implements OnInit {
   }
 
   openExternalBotIntegrationTutorial() {
-    const url = 'https://www.pobuca.com/';
+    const url = 'https://developer.tiledesk.com/apis/tutorials/connect-your-own-chatbot';
     window.open(url, '_blank');
   }
 

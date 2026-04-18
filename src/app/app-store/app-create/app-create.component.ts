@@ -362,7 +362,7 @@ export class AppCreateComponent implements OnInit {
 
 
   goToCreateNewAppDocs() {
-    const url = "https://www.pobuca.com/"
+    const url = "https://developer.tiledesk.com/apps/create-app-quick-start"
     window.open(url, '_blank');
   }
 

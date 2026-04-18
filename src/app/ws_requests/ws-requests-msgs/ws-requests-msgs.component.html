@@ -280,14 +280,14 @@
                                 <!-- --------------------------------------- -->
                                 <img *ngIf="UPLOAD_ENGINE_IS_FIREBASE" class="bot-img-in-msg-list"
                                   src="https://firebasestorage.googleapis.com/v0/b/{{storageBucket}}/o/profiles%2F{{message?.sender | slice:4 }}%2Fphoto.jpg?alt=media"
-                                  onerror="this.src='assets/images/brand/pobuca-converse.png'" />
+                                  onerror="this.src='assets/img/avatar_bot_tiledesk.svg'" />
 
                                 <!-- --------------------------------------- -->
                                 <!-- Usecase  Native (bot) -->
                                 <!-- --------------------------------------- -->
                                 <img *ngIf="!UPLOAD_ENGINE_IS_FIREBASE" class="bot-img-in-msg-list"
                                   src="{{baseUrl}}files?path=uploads%2Fusers%2F{{message?.sender | slice:4}}%2Fimages%2Fthumbnails_200_200-photo.jpg"
-                                  onerror="this.src='assets/images/brand/pobuca-converse.png'" />
+                                  onerror="this.src='assets/img/avatar_bot_tiledesk.svg'" />
                               </span>
                             </div>
                           </div>
@@ -1136,7 +1136,7 @@
                                 <img *ngIf="agent.isBot === true && UPLOAD_ENGINE_IS_FIREBASE"
                                   class="served-by-avatar--img"
                                   src="https://firebasestorage.googleapis.com/v0/b/{{storageBucket}}/o/profiles%2F{{agent?._id | slice:4}}%2Fthumb_photo.jpg?alt=media"
-                                  onerror="this.src='assets/images/brand/pobuca-converse.png'"
+                                  onerror="this.src='assets/img/avatar_bot_tiledesk.svg'"
                                   [satPopoverAnchor]="botfbengine" (click)="!CHAT_PANEL_MODE && botfbengine.toggle()"
                                   (click)="$event.stopPropagation()" (document:click)="botfbengine.close()"
                                   matTooltipClass="custom-mat-tooltip" matTooltip="{{'VisitorsPage.AssignedTo' | translate }} {{agent?.firstname}} {{agent?.lastname}} (bot)
@@ -1162,7 +1162,7 @@
                                 <img *ngIf="agent.isBot === true && !UPLOAD_ENGINE_IS_FIREBASE"
                                   class="served-by-avatar--img"
                                   src="{{baseUrl}}files?path=uploads%2Fusers%2F{{agent?._id | slice:4}}%2Fimages%2Fthumbnails_200_200-photo.jpg"
-                                  onerror="this.src='assets/images/brand/pobuca-converse.png'"
+                                  onerror="this.src='assets/img/avatar_bot_tiledesk.svg'"
                                   (click)="goToMemberProfile(agent, agent?._id )" matTooltipClass="custom-mat-tooltip"
                                   matTooltip="{{'VisitorsPage.AssignedTo' | translate }} {{agent?.firstname}} {{agent?.lastname}} (bot)"
                                   #tooltip="matTooltip" matTooltipPosition='left' matTooltipHideDelay="100" />
@@ -1277,7 +1277,7 @@
                                           *ngIf="agent.isBot === true && UPLOAD_ENGINE_IS_FIREBASE">
                                           <img class="served-by-avatar--img"
                                             src="https://firebasestorage.googleapis.com/v0/b/{{storageBucket}}/o/profiles%2F{{agent?._id | slice:4}}%2Fthumb_photo.jpg?alt=media"
-                                            onerror="this.src='assets/images/brand/pobuca-converse.png'" />
+                                            onerror="this.src='assets/img/avatar_bot_tiledesk.svg'" />
                                           <span style="margin-left: 8px;font-size: 12px; font-weight: 400;">
                                             {{agent?.firstname}} {{agent?.lastname}} (bot)
                                           </span>
@@ -1297,7 +1297,7 @@
                                           *ngIf="agent.isBot === true && !UPLOAD_ENGINE_IS_FIREBASE">
                                           <img class="served-by-avatar--img"
                                             src="{{baseUrl}}files?path=uploads%2Fusers%2F{{agent?._id | slice:4}}%2Fimages%2Fthumbnails_200_200-photo.jpg"
-                                            onerror="this.src='assets/images/brand/pobuca-converse.png'" />
+                                            onerror="this.src='assets/img/avatar_bot_tiledesk.svg'" />
                                           <span style="margin-left: 8px;font-size: 12px; font-weight: 400;"
                                             *ngIf="agent.isBot === true && !UPLOAD_ENGINE_IS_FIREBASE">
                                             {{agent?.firstname}} {{agent?.lastname}} (bot)
@@ -3690,7 +3690,7 @@
                               <img *ngIf="UPLOAD_ENGINE_IS_FIREBASE" class="ws_requets_msgs__user-img-in-modal"
                                 [ngClass]="{'ws_requets_msgs__user-img-in-modal-chat-panel-mode' : CHAT_PANEL_MODE === true}"
                                 src="https://firebasestorage.googleapis.com/v0/b/{{storageBucket}}/o/profiles%2F{{bot?._id}}%2Fphoto.jpg?alt=media"
-                                onerror="this.src='assets/images/brand/pobuca-converse.png'" />
+                                onerror="this.src='assets/img/avatar_bot_tiledesk.svg'" />
 
                               <!-- --------------------------------------- -->
                               <!-- Usecase Native (bot) -->
@@ -3698,13 +3698,13 @@
                               <img *ngIf="!UPLOAD_ENGINE_IS_FIREBASE" class="ws_requets_msgs__user-img-in-modal"
                                 [ngClass]="{'ws_requets_msgs__user-img-in-modal-chat-panel-mode' : CHAT_PANEL_MODE === true}"
                                 src="{{baseUrl}}files?path=uploads%2Fusers%2F{{bot?._id}}%2Fimages%2Fthumbnails_200_200-photo.jpg"
-                                onerror="this.src='assets/images/brand/pobuca-converse.png'" />
+                                onerror="this.src='assets/img/avatar_bot_tiledesk.svg'" />
 
 
                               <span *ngIf="bot.type === 'internal'">
                                 <img class="ws-request-msgs-bot-type-logo"
                                   [ngClass]="{'ws-request-msgs-bot-type-logo-chat-panel-mode' : CHAT_PANEL_MODE === true}"
-                                  src="assets/images/brand/pobuca-converse.png" />
+                                  src="assets/img/tiledesk_logo_no_text.png" />
                               </span>
 
                               <span *ngIf="bot.type === 'external'">
@@ -3744,7 +3744,7 @@
                               <!-- <span *ngIf="bot.type === 'tiledesk-ai'">
                                 <img class="ws-request-msgs-bot-type-logo"
                                   [ngClass]="{'ws-request-msgs-bot-type-logo-chat-panel-mode' : CHAT_PANEL_MODE === true}"
-                                  src="assets/images/brand/pobuca-converse.png" />
+                                  src="assets/img/tiledesk-ai-logo.png" />
                               </span> -->
                             </td>
 
@@ -4427,7 +4427,7 @@
                           <img *ngIf="UPLOAD_ENGINE_IS_FIREBASE" class="ws_requets_msgs__user-img-in-modal"
                             [ngClass]="{'ws_requets_msgs__user-img-in-modal-chat-panel-mode' : CHAT_PANEL_MODE === true}"
                             src="https://firebasestorage.googleapis.com/v0/b/{{storageBucket}}/o/profiles%2F{{bot?._id}}%2Fphoto.jpg?alt=media"
-                            onerror="this.src='assets/images/brand/pobuca-converse.png'" />
+                            onerror="this.src='assets/img/avatar_bot_tiledesk.svg'" />
 
                           <!-- --------------------------------------- -->
                           <!-- Usecase Native (bot) -->
@@ -4435,13 +4435,13 @@
                           <img *ngIf="!UPLOAD_ENGINE_IS_FIREBASE" class="ws_requets_msgs__user-img-in-modal"
                             [ngClass]="{'ws_requets_msgs__user-img-in-modal-chat-panel-mode' : CHAT_PANEL_MODE === true}"
                             src="{{baseUrl}}files?path=uploads%2Fusers%2F{{bot?._id}}%2Fimages%2Fthumbnails_200_200-photo.jpg"
-                            onerror="this.src='assets/images/brand/pobuca-converse.png'" />
+                            onerror="this.src='assets/img/avatar_bot_tiledesk.svg'" />
 
 
                           <span *ngIf="bot.type === 'internal'">
                             <img class="ws-request-msgs-bot-type-logo"
                               [ngClass]="{'ws-request-msgs-bot-type-logo-chat-panel-mode' : CHAT_PANEL_MODE === true}"
-                              src="assets/images/brand/pobuca-converse.png" />
+                              src="assets/img/tiledesk_logo_no_text.png" />
                           </span>
 
                           <span *ngIf="bot.type === 'external'">
@@ -4481,7 +4481,7 @@
                           <!-- <span *ngIf="bot.type === 'tiledesk-ai'">
                         <img class="ws-request-msgs-bot-type-logo"
                           [ngClass]="{'ws-request-msgs-bot-type-logo-chat-panel-mode' : CHAT_PANEL_MODE === true}"
-                          src="assets/images/brand/pobuca-converse.png" />
+                          src="assets/img/tiledesk-ai-logo.png" />
                       </span> -->
                         </td>
 

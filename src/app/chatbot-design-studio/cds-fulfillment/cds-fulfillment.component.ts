@@ -128,7 +128,7 @@ export class CdsFulfillmentComponent implements OnInit {
   }
 
   openWebhookRequirementsDoc() {
-    const url = 'https://www.pobuca.com/';
+    const url = 'https://developer.tiledesk.com/resolution-bot-programming/webhook-data-model';
     window.open(url, '_blank');
   }
 

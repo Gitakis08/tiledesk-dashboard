@@ -1655,7 +1655,7 @@ export class FaqComponent extends BotsBaseComponent implements OnInit {
 
 
   openRasaIntegrationTutorial() {
-    const url = 'https://www.pobuca.com/';
+    const url = 'https://gethelp.tiledesk.com/articles/rasa-ai-integration/';
     window.open(url, '_blank');
   }
 
@@ -1689,7 +1689,7 @@ export class FaqComponent extends BotsBaseComponent implements OnInit {
   // Dialogflow bot doc link
   // -----------------------------------------------------------------------
   openDeveloperTiledeskGenerateDFCredentialFile() {
-    const url = 'https://www.pobuca.com/';
+    const url = 'https://developer.tiledesk.com/external-chatbot/build-your-own-dialogflow-connnector/generate-dialgoflow-google-credentials-file';
     window.open(url, '_blank');
   }
 
@@ -1715,12 +1715,12 @@ export class FaqComponent extends BotsBaseComponent implements OnInit {
   // -----------------------------------------------------------------------
   openExternalBotIntegrationTutorial() {
     // const url = 'https://developer.tiledesk.com/apis/tutorials/connect-your-own-chatbot';
-    const url = 'https://www.pobuca.com/';
+    const url = 'https://developer.tiledesk.com/external-chatbot/connect-your-own-chatbot';
     window.open(url, '_blank');
   }
 
   openWebhookRequirementsDoc() {
-    const url = 'https://www.pobuca.com/';
+    const url = 'https://developer.tiledesk.com/resolution-bot-programming/webhook-data-model';
     window.open(url, '_blank');
   }
 

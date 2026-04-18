@@ -163,7 +163,7 @@ export class WebhookComponent implements OnInit {
   }
 
   openWebhookDoc() {
-    const url = 'https://www.pobuca.com/'
+    const url = 'https://developer.tiledesk.com/apis/webhooks'
     window.open(url, '_blank');
   }
 

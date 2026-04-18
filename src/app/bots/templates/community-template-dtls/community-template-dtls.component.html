@@ -29,11 +29,11 @@
                     <span *ngIf="!template?.bigImage">
                         <img *ngIf="UPLOAD_ENGINE_IS_FIREBASE" class="cmnty-chatbot-dtls-img"
                             src="https://firebasestorage.googleapis.com/v0/b/{{storageBucket}}/o/profiles%2F{{template?._id}}%2Fphoto.jpg?alt=media"
-                            onerror="this.src='assets/images/brand/pobuca-converse.png'" />
+                            onerror="this.src='assets/img/avatar_bot_tiledesk.svg'" />
 
                         <img *ngIf="!UPLOAD_ENGINE_IS_FIREBASE" class="cmnty-chatbot-dtls-img"
                             src="{{baseUrl}}files?path=uploads%2Fusers%2F{{template?._id}}%2Fimages%2Fthumbnails_200_200-photo.jpg"
-                            onerror="this.src='assets/images/brand/pobuca-converse.png'" />
+                            onerror="this.src='assets/img/avatar_bot_tiledesk.svg'" />
                     </span>
                     <span *ngIf="template?.bigImage">
                         <img class="cmnty-chatbot-dtls-img" src="{{template.bigImage}}">
@@ -45,7 +45,7 @@
                 </div>
                 <!--  -->
                 <div *ngIf="template?.certified === true" style="height: 24px;margin-left: 6px;z-index: 2;"
-                    matTooltipClass="custom-mat-tooltip" matTooltip="Pobuca Converse verified" #tooltip="matTooltip"
+                    matTooltipClass="custom-mat-tooltip" matTooltip="Tiledesk verified" #tooltip="matTooltip"
                     matTooltipPosition='below' matTooltipHideDelay="100">
                     <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
                         xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 24 24"

@@ -729,17 +729,17 @@
                           <!-- --------------------------------------------------------------------- -->
                           <img *ngIf="selectedId && UPLOAD_ENGINE_IS_FIREBASE" class="bot-img-dept-edit-add"
                             src="https://firebasestorage.googleapis.com/v0/b/{{storageBucket}}/o/profiles%2F{{selectedId}}%2Fphoto.jpg?alt=media"
-                            onerror="this.src='assets/images/brand/pobuca-converse.png'" />
+                            onerror="this.src='assets/img/avatar_bot_tiledesk.svg'" />
 
                           <!-- --------------------------------------------------------------------- -->
                           <!-- Bot profile photo usecase uploadEngine Native -->
                           <!-- --------------------------------------------------------------------- -->
                           <img *ngIf="selectedId && !UPLOAD_ENGINE_IS_FIREBASE" class="bot-img-dept-edit-add"
                             src="{{baseUrl}}files?path=uploads%2Fusers%2F{{selectedId}}%2Fimages%2Fthumbnails_200_200-photo.jpg"
-                            onerror="this.src='assets/images/brand/pobuca-converse.png'" />
+                            onerror="this.src='assets/img/avatar_bot_tiledesk.svg'" />
 
                           <span *ngIf="bot_type === 'internal'">
-                            <img class="dept_bot-type-logo" src="assets/images/brand/pobuca-converse.png" />
+                            <img class="dept_bot-type-logo" src="assets/img/tiledesk_logo_no_text.png" />
                           </span>
 
                           <span *ngIf="bot_type === 'external'">
