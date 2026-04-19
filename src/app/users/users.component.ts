@@ -424,7 +424,7 @@ export class UsersComponent extends PricingBaseComponent implements OnInit, Afte
     } else {
       agentFullname = agentFirstname
     }
-    const url = this.CHAT_BASE_URL + '#/conversation-detail/' + agentId + '/' + agentFullname + '/new'
+    const url = this.CHAT_BASE_URL + '#/conversation-detail/' + agentId + '/new'
     this.logger.log('[USERS] - CHAT WITH AGENT - CHAT URL ', url)
     window.open(url, '_blank')
   }

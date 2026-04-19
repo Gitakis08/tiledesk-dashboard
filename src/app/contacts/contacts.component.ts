@@ -1402,7 +1402,7 @@ export class ContactsComponent implements OnInit, OnDestroy, AfterViewInit {
 
 
     // const url = this.CHAT_BASE_URL + '?' + 'recipient=' + contact._id + '&recipientFullname=' + contact.fullname;
-    const url = this.CHAT_BASE_URL + '#/conversation-detail/' + contact._id + '/' + contact.fullname + '/active'
+    const url = this.CHAT_BASE_URL + '#/conversation-detail/' + contact._id + '/active'
     this.logger.log("[CONTACTS-COMP] CHAT WITH AGENT -> CHAT URL ", url);
     window.open(url, '_blank');
   }

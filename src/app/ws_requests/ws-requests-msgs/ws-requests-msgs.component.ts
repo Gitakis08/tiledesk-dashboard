@@ -5280,7 +5280,7 @@ export class WsRequestsMsgsComponent extends WsSharedComponent implements OnInit
     // ---- new
     localStorage.setItem('last_project', JSON.stringify(this.current_selected_prjct))
     let baseUrl = this.CHAT_BASE_URL + '#/conversation-detail/'
-    let url = baseUrl + agentId + '/' + agentFullname + '/new'
+    let url = baseUrl + agentId + '/new'
     const myWindow = window.open(url, '_self', 'Tiledesk - Open Source Live Chat');
     myWindow.focus();
 

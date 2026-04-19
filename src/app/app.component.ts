@@ -754,7 +754,7 @@ export class AppComponent implements OnInit, AfterViewInit, OnDestroy {
                 const requester_avatar_bckgrnd = this.doRecipient_fullname_bckgrnd(recipient_fullname)
                 const clickAction = (payload.notification && payload.notification.click_action) || ''
                 const clickBase = clickAction.split('#')[0]
-                const link = clickBase + '#/conversation-detail/' + payload.data.recipient + '/' + payload.data.sender_fullname + '/active'
+                const link = clickBase + '#/conversation-detail/' + payload.data.recipient + '/active'
                 // this.logger.log('Message received link ', link);
                 if (this.HIDE_FOREGROUND_NOTIFICATION === false) {
                     this.notify.showForegroungPushNotification(payload.data.recipient_fullname, payload.data.text, link, requester_avatar_initial, requester_avatar_bckgrnd);

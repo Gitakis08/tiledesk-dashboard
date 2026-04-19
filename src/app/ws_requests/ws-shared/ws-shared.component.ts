@@ -110,7 +110,7 @@ export class WsSharedComponent implements OnInit {
     let _requester_fullanme = ""
     if (requester_fullanme.indexOf("#") !== -1) {
       this.logger.log("requester_fullanme contains #");
-      _requester_fullanme = requester_fullanme.replace(/#/g, "%23")
+      _requester_fullanme = requester_fullanme
 
     } else {
       this.logger.log("String does not contain #");
@@ -121,7 +121,7 @@ export class WsSharedComponent implements OnInit {
     this.logger.log('[WS-SHARED] openChatToTheSelectedConversation chatTabCount ', chatTabCount)
 
     let baseUrl = CHAT_BASE_URL + '#/conversation-detail/'
-    let url = baseUrl + requestid + '/' + _requester_fullanme.trim() + '/active'
+    let url = baseUrl + requestid + '/active'
     this.logger.log('[WS-SHARED] openChatToTheSelectedConversation url ', url)
     const myWindow = window.open(url, '_self', 'Tiledesk - Open Source Live Chat');
     myWindow.focus();
