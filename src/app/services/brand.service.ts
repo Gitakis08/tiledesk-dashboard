@@ -20,7 +20,7 @@ export class BrandService {
 
   _brand = {
     DASHBOARD: {
-      META_TITLE: "Tiledesk Design Studio",
+      META_TITLE: "Zemark chat",
       // FAVICON_URL: "https://tiledesk.com/wp-content/uploads/2022/07/tiledesk_v13-300x300.png",
       FAVICON_URL: "assets/img/logos/favicon.ico",
       CUSTOM_COMPANY_HOME_LOGO: false,

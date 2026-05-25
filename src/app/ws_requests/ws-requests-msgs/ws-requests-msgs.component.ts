@@ -5230,8 +5230,8 @@ export class WsRequestsMsgsComponent extends WsSharedComponent implements OnInit
   //   const url = this.CHAT_BASE_URL + '#/conversation-detail/' + this.id_request + "/" + this.request.lead.fullname + "/active"
   //   this.logger.log('[WS-REQUESTS-MSGS] openChatInNewWindow url ', url);
   //   window.open(url, '_blank');
-  //   // this.openWindow('Tiledesk - Open Source Live Chat', url)
-  //   // this.focusWin('Tiledesk - Open Source Live Chat')
+  //   // this.openWindow('Zemark chat', url)
+  //   // this.focusWin('Zemark chat')
   // }
 
   openWindow(winName: any, winURL: any) {
@@ -5281,7 +5281,7 @@ export class WsRequestsMsgsComponent extends WsSharedComponent implements OnInit
     localStorage.setItem('last_project', JSON.stringify(this.current_selected_prjct))
     let baseUrl = this.CHAT_BASE_URL + '#/conversation-detail/'
     let url = baseUrl + agentId + '/new'
-    const myWindow = window.open(url, '_self', 'Tiledesk - Open Source Live Chat');
+    const myWindow = window.open(url, '_self', 'Zemark chat');
     myWindow.focus();
 
 
@@ -5292,15 +5292,15 @@ export class WsRequestsMsgsComponent extends WsSharedComponent implements OnInit
     //   if (+chatTabCount > 0) {
     //     this.logger.log('[WS-REQUESTS-MSGS]  chatWithAgent chatTabCount > 0 ')
     //     url = this.CHAT_BASE_URL + '#/conversation-detail?contact_id=' + agentId + '&contact_fullname=' + agentFullname
-    //     this.openWindow('Tiledesk - Open Source Live Chat', url)
+    //     this.openWindow('Zemark chat', url)
     //   } else if (chatTabCount && +chatTabCount === 0) {
     //     this.logger.log('[WS-REQUESTS-MSGS]  chatWithAgent chatTabCount = 0 ')
     //     url = this.CHAT_BASE_URL + '#/conversation-detail/' + agentId + '/' + agentFullname + '/new'
-    //     this.openWindow('Tiledesk - Open Source Live Chat', url)
+    //     this.openWindow('Zemark chat', url)
     //   }
     // } else {
     //   url = this.CHAT_BASE_URL + '#/conversation-detail/' + agentId + '/' + agentFullname + '/new'
-    //   this.openWindow('Tiledesk - Open Source Live Chat', url)
+    //   this.openWindow('Zemark chat', url)
     // }
 
   }

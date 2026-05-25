@@ -96,7 +96,7 @@ export class WsSharedComponent implements OnInit {
 
   ngOnInit() { }
 
-  // myWindow = window.open('https://console.tiledesk.com/v2/chat5-dev/#/conversation-detail?convId=222', 'Tiledesk - Open Source Live Chat');
+  // myWindow = window.open('https://console.tiledesk.com/v2/chat5-dev/#/conversation-detail?convId=222', 'Zemark chat');
   // myWindow.document.write("<p>This is 'myWindow'</p>");
   // if(doFocus)
   //     myWindow.focus();
@@ -123,7 +123,7 @@ export class WsSharedComponent implements OnInit {
     let baseUrl = CHAT_BASE_URL + '#/conversation-detail/'
     let url = baseUrl + requestid + '/active'
     this.logger.log('[WS-SHARED] openChatToTheSelectedConversation url ', url)
-    const myWindow = window.open(url, '_self', 'Tiledesk - Open Source Live Chat');
+    const myWindow = window.open(url, '_self', 'Zemark chat');
     myWindow.focus();
 
     // if (chatTabCount) {
@@ -131,14 +131,14 @@ export class WsSharedComponent implements OnInit {
     //     this.logger.log('[WS-SHARED] openChatToTheSelectedConversation chatTabCount > 0 ')
 
     //     url = CHAT_BASE_URL + '#/conversation-detail?convId=' + requestid
-    //     this.openWindow('Tiledesk - Open Source Live Chat', url)
+    //     this.openWindow('Zemark chat', url)
     //   } else if (chatTabCount && +chatTabCount === 0) {
     //     url = CHAT_BASE_URL + '#/conversation-detail/' + requestid + "/" + requester_fullanme + "/active"
-    //     this.openWindow('Tiledesk - Open Source Live Chat', url)
+    //     this.openWindow('Zemark chat', url)
     //   }
     // } else {
     //   url = CHAT_BASE_URL + '#/conversation-detail/' + requestid + "/" + requester_fullanme + "/active"
-    //   this.openWindow('Tiledesk - Open Source Live Chat', url)
+    //   this.openWindow('Zemark chat', url)
     // }
   }
 

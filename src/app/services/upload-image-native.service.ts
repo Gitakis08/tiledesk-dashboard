@@ -103,7 +103,7 @@ export class UploadImageNativeService {
           }
         }
         const downloadURL = this.BASE_URL + 'files?path=' + res['filename'];
-        // const downloadURL = BASE_URL_IMAGES + '?path=' + res['thumbnail'];
+        // const downloadURL = this.BASE_URL + 'files?path=' + (res['thumbnail'] || res['filename']);
         // this.logger.log('[UPLOAD-IMAGE-NATIVE.SERV] UPLOAD USER PHOTO PROFILE - downloadURL ', downloadURL);
         this.userImageDownloadUrl_Native.next(downloadURL);
 
@@ -171,15 +171,16 @@ export class UploadImageNativeService {
     // }
     // formData.append('file', file, file.name);
 
-    // USE IMAGE API
-    const BASE_URL_IMAGES = this.BASE_URL + 'images'
+    // USE FILES API - bot avatar upload endpoint is mounted at /:projectid/files/users/photo
+    const BASE_URL_FILES = this.BASE_URL + this.projectId + '/files'
+    this.logger.log('[UPLOAD-IMAGE-NATIVE.SERV] Bot Photo Profile upload BASE_URL_FILES ', BASE_URL_FILES)
     return this._httpClient
-      .put<any>(BASE_URL_IMAGES + `/users/photo?force=true&bot_id=${id}`, formData, requestOptions)
+      .post<any>(BASE_URL_FILES + `/users/photo?force=true&bot_id=${id}`, formData, requestOptions)
       .pipe(map((res: any) => {
         this.logger.log('[UPLOAD-IMAGE-NATIVE.SERV] UPLOAD BOT PHOTO PROFILE - RES ', res);
         if (res && res.message) {
           this.logger.log('[UPLOAD-IMAGE-NATIVE.SERV] UPLOAD BOT PHOTO PROFILE - RES MSG ', res.message);
-          if (res.message === 'Image uploded successfully') {
+          if (res.message === 'Image uploaded successfully' || res.message === 'Image uploded successfully') {
 
             this.botImageWasUploaded_Native.next(true);
           } else {
@@ -187,8 +188,8 @@ export class UploadImageNativeService {
             this.logger.error('[UPLOAD-IMAGE-NATIVE.SERV] UPLOAD BOT PHOTO PROFILE - ERROR RES MSG ', res.message);
           }
         }
-        // const downloadURL = BASE_URL_IMAGES + '?path=' + res['filename'];
-        const downloadURL = BASE_URL_IMAGES + '?path=' + res['thumbnail'];
+        // const downloadURL = this.BASE_URL + 'files?path=' + (res['thumbnail'] || res['filename']);
+        const downloadURL = this.BASE_URL + 'files?path=' + (res['thumbnail'] || res['filename']);
 
         this.botImageDownloadUrl_Native.next(downloadURL);
         return downloadURL
@@ -226,23 +227,24 @@ export class UploadImageNativeService {
     // }
     // formData.append('file', file, file.name);
 
-    // USE IMAGE API
-    const BASE_URL_IMAGES = this.BASE_URL + 'images'
+    // USE FILES API - launcher logo upload endpoint is mounted at /:projectid/files/users/photo
+    const BASE_URL_FILES = this.BASE_URL + this.projectId + '/files'
+    this.logger.log('[UPLOAD-IMAGE-NATIVE.SERV] Launcher Logo upload BASE_URL_FILES ', BASE_URL_FILES)
     return this._httpClient
-      .put<any>(BASE_URL_IMAGES + '/users/photo?force=true', formData, requestOptions)
+      .post<any>(BASE_URL_FILES + '/users/photo?force=true', formData, requestOptions)
       .pipe(map((res: any) => {
         this.logger.log('[UPLOAD-IMAGE-NATIVE.SERV] UPLOAD LAUNCHER LOGO - RES ', res);
         if (res && res.message) {
           // this.logger.log('[UPLOAD-IMAGE-NATIVE.SERV] UPLOAD LAUNCHER LOGO - RES MSG ', res.message);
 
-          if (res.message === 'Image uploded successfully') {
+          if (res.message === 'Image uploaded successfully' || res.message === 'Image uploded successfully') {
             // this.userImageWasUploaded_Native.next(true);
           } else {
             // this.userImageWasUploaded_Native.next(false);
             this.logger.error('[UPLOAD-IMAGE-NATIVE.SERV] UPLOAD LAUNCHER LOGO - ERROR RES MSG ', res.message);
           }
         }
-        const downloadURL = BASE_URL_IMAGES + '?path=' + res['filename'];
+        const downloadURL = this.BASE_URL + 'files?path=' + res['filename'];
         // const downloadURL = BASE_URL_IMAGES + '?path=' + res['thumbnail'];
         // this.userImageDownloadUrl_Native.next(downloadURL);
         // this.logger.log('[UPLOAD-IMAGE-NATIVE.SERV] downloadURL ', downloadURL)

@@ -2210,7 +2210,7 @@ export class SidebarComponent implements OnInit, AfterViewInit {
     }
     // let baseUrl = this.CHAT_BASE_URL + '#/conversation-detail/'
     // let url = baseUrl
-    // const myWindow = window.open(url, '_self', 'Tiledesk - Open Source Live Chat');
+    // const myWindow = window.open(url, '_self', 'Zemark chat');
     // myWindow.focus();
 
 
@@ -2221,14 +2221,14 @@ export class SidebarComponent implements OnInit, AfterViewInit {
     //     if (+chatTabCount > 0) {
     //         this.logger.log('[SIDEBAR] openChat chatTabCount > 0 ')
 
-    //         this.openWindow('Tiledesk - Open Source Live Chat', url + '?conversation_detail');
-    //         // this.focusWin('Tiledesk - Open Source Live Chat')
-    //         // window.open('Tiledesk - Open Source Live Chat', url).focus();
+    //         this.openWindow('Zemark chat', url + '?conversation_detail');
+    //         // this.focusWin('Zemark chat')
+    //         // window.open('Zemark chat', url).focus();
     //     } else if (chatTabCount && +chatTabCount === 0) {
-    //         this.openWindow('Tiledesk - Open Source Live Chat', url);
+    //         this.openWindow('Zemark chat', url);
     //     }
     // } else {
-    //     this.openWindow('Tiledesk - Open Source Live Chat', url);
+    //     this.openWindow('Zemark chat', url);
     // }
     // this.redirectToPricing(this.currentProjectUser)
   }

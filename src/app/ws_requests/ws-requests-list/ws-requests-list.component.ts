@@ -311,13 +311,13 @@ export class WsRequestsListComponent extends WsSharedComponent implements OnInit
 
   openChat() {
     // const url = this.CHAT_BASE_URL;
-    // this.openWindow('Tiledesk - Open Source Live Chat', url)
-    // this.focusWin('Tiledesk - Open Source Live Chat')
+    // this.openWindow('Zemark chat', url)
+    // this.focusWin('Zemark chat')
     // --- new 
     localStorage.setItem('last_project', JSON.stringify(this.current_selected_prjct))
     let baseUrl = this.CHAT_BASE_URL + '#/conversation-detail/'
     let url = baseUrl
-    const myWindow = window.open(url, '_self', 'Tiledesk - Open Source Live Chat');
+    const myWindow = window.open(url, '_self', 'Zemark chat');
     myWindow.focus();
   }
 
@@ -2014,7 +2014,7 @@ export class WsRequestsListComponent extends WsSharedComponent implements OnInit
     // + '&projectname=' + this.projectName
     // const url = 'http://testwidget.tiledesk.com/testsitenw3?projectname=' + this.projectName + ' &projectid=' + this.projectId
     // '&isOpen=true'
-    const url = this.TESTSITE_BASE_URL + '?tiledesk_projectid=' + this.projectId + '&project_name=' + encodeURIComponent(this.projectName) + '&role=' + this.CURRENT_USER_ROLE
+    const url = this.TESTSITE_BASE_URL + '?tiledesk_projectid=' + this.projectId + '&project_name=' + encodeURIComponent(this.projectName)
     // + '&prechatform=' + false + '&callout_timer=' + false + '&align=right';
     window.open(url, '_blank');
   }

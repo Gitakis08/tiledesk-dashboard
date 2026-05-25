@@ -36,4 +36,17 @@ RUN rm -rf /usr/share/nginx/html/*
 COPY --from=builder /ng-app/dist /usr/share/nginx/html
 
 ##CMD ["nginx", "-g", "daemon off;"]
+# Pobuca footer patch
+COPY pobuca-footer.js /usr/share/nginx/html/pobuca-footer.js
+
+RUN set -eux; \
+  INDEX="$(find /usr/share/nginx/html -name index.html | head -n 1)"; \
+  if ! grep -q "pobuca-footer.js" "$INDEX"; then \
+    if grep -q "</body>" "$INDEX"; then \
+      sed -i 's#</body>#  <script src="/pobuca-footer.js?v=pobuca-20260504"></script>\n</body>#' "$INDEX"; \
+    else \
+      printf '\n<script src="/pobuca-footer.js?v=pobuca-20260504"></script>\n' >> "$INDEX"; \
+    fi; \
+  fi
+
 CMD ["/bin/sh",  "-c",  "envsubst < /usr/share/nginx/html/dashboard-config-template.json > /usr/share/nginx/html/dashboard-config.json && exec nginx -g 'daemon off;'"]
