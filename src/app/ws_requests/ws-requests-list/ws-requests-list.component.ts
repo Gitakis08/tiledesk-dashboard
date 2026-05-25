@@ -317,7 +317,7 @@ export class WsRequestsListComponent extends WsSharedComponent implements OnInit
     localStorage.setItem('last_project', JSON.stringify(this.current_selected_prjct))
     let baseUrl = this.CHAT_BASE_URL + '#/conversation-detail/'
     let url = baseUrl
-    const myWindow = window.open(url, '_self', 'Zemark chat');
+    const myWindow = window.open(url, '_self', 'Pobuca Converse');
     myWindow.focus();
   }
 
@@ -2600,6 +2600,5 @@ export class WsRequestsListComponent extends WsSharedComponent implements OnInit
   // }
 
 }
-
 
 

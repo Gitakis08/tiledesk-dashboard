@@ -123,7 +123,7 @@ export class WsSharedComponent implements OnInit {
     let baseUrl = CHAT_BASE_URL + '#/conversation-detail/'
     let url = baseUrl + requestid + '/active'
     this.logger.log('[WS-SHARED] openChatToTheSelectedConversation url ', url)
-    const myWindow = window.open(url, '_self', 'Zemark chat');
+    const myWindow = window.open(url, '_self', 'Pobuca Converse');
     myWindow.focus();
 
     // if (chatTabCount) {
