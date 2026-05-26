@@ -100,8 +100,8 @@ export class BrandService {
       COMPANY_SITE_URL: "https://www.tiledesk.com",
       CONTACT_US_EMAIL: "support@tiledesk.com",
       CONTACT_SALES_EMAIL: "sales@tiledesk.com",
-      BRAND_PRIMARY_COLOR: "#f0806f",
-      BRAND_SECONDARY_COLOR: "#f0806f",
+      BRAND_PRIMARY_COLOR: "#1F78FF",
+      BRAND_SECONDARY_COLOR: "#22D7D8",
       DOCS: true,
       LOGOUT_ENABLED: true
     }
