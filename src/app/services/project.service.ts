@@ -1,6 +1,6 @@
 // tslint:disable:max-line-length
 import { Injectable } from '@angular/core';
-import { Observable, BehaviorSubject, of } from 'rxjs';
+import { Observable, BehaviorSubject, EMPTY, of } from 'rxjs';
 import { Project } from '../models/project-model';
 import { AuthService } from '../core/auth.service';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
@@ -167,6 +167,11 @@ export class ProjectService {
    * @returns 
    */
   public getProjectById(id: string): Observable<Project[]> {
+    if (!id || id === 'undefined' || id === 'null') {
+      this.logger.warn('[PROJECT-SERV] - GET PROJECT BY ID skipped due to invalid id', id);
+      return EMPTY;
+    }
+
     // Controlla se il progetto è in cache
     const cachedProject$ = this.projectCacheService.getProjectById(id);
     if (cachedProject$) {
