@@ -3423,6 +3423,39 @@
 
 										</div>
 
+										<!-- ------------------------------------------------------ -->
+										<!-- Enable / Disable Native RATING -->
+										<!-- ------------------------------------------------------ -->
+										<div class="widget-section-container" style="height: auto; transition-duration: 0.613s;">
+											<div class="section-offset">
+												<div class="form-group"
+													style="max-width: 640px; margin-left: -15px; margin-right: -15px; margin-top: 0px;">
+													<label class="col-sm-12 control-label widget-settings-control-head-label">
+														{{'AutoRating' | translate}}
+														<span class="widget-settings-control-subhead-label">
+															{{'AtTheEndOfThConversationAFormIsProposedToEvaluateTheConversation' |
+															translate}}
+														</span>
+													</label>
+													<div class="col-sm-12">
+														<div class="nw-onoffswitch-wrapper" style="clear: both;">
+															<div class="nw-onoffswitch">
+																<input (change)="toggleAutoRating($event)" type="checkbox"
+																	name="nw-autorating-switch" class="nw-onoffswitch-checkbox"
+																	id="nw-autorating-switch" tabindex="0" [checked]="nativeRating">
+																<label class="nw-onoffswitch-label" for="nw-autorating-switch"></label>
+															</div>
+														</div>
+													</div>
+
+													<label class="col-sm-12 control-label widget-settings-control-label"
+														style="position: relative;top: -6px;">
+														{{ 'EnableDisable' | translate }}
+													</label>
+												</div>
+											</div>
+										</div>
+
 										<!-- ------------------------------------- -->
 										<!-- Save widget advanced setting -->
 										<!-- ------------------------------------- -->
@@ -3442,39 +3475,6 @@
 										</div>
 
 
-									</div>
-								</div>
-
-								<!-- ------------------------------------------------------ -->
-								<!-- Enable / Disable Native RATING -->
-								<!-- ------------------------------------------------------ -->
-								<div class="widget-section-container" style="height: auto; transition-duration: 0.613s;">
-									<div class="section-offset">
-										<div class="form-group"
-											style="max-width: 640px; margin-left: -15px; margin-right: -15px; margin-top: 0px;">
-											<label class="col-sm-12 control-label widget-settings-control-head-label">
-												{{'AutoRating' | translate}}
-												<span class="widget-settings-control-subhead-label">
-													{{'AtTheEndOfThConversationAFormIsProposedToEvaluateTheConversation' |
-													translate}}
-												</span>
-											</label>
-											<div class="col-sm-12">
-												<div class="nw-onoffswitch-wrapper" style="clear: both;">
-													<div class="nw-onoffswitch">
-														<input (change)="toggleAutoRating($event)" type="checkbox"
-															name="nw-autorating-switch" class="nw-onoffswitch-checkbox"
-															id="nw-autorating-switch" tabindex="0" [checked]="nativeRating">
-														<label class="nw-onoffswitch-label" for="nw-autorating-switch"></label>
-													</div>
-												</div>
-											</div>
-
-											<label class="col-sm-12 control-label widget-settings-control-label"
-												style="position: relative;top: -6px;">
-												{{ 'EnableDisable' | translate }}
-											</label>
-										</div>
 									</div>
 								</div>
 
