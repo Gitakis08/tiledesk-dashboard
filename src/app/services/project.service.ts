@@ -705,8 +705,8 @@ export class ProjectService {
     // this.logger.log('[PROJECT-SERV] SAVE SMTP SETTINGS - PUT URL ', url);
 
     let body = {}
-    body["settings.email.from"] = undefined;
-    body["settings.email.config"] = undefined;
+    body["settings.email.from"] = null;
+    body["settings.email.config"] = null;
 
     this.logger.log('[PROJECT-SERV] RESET TO DEFAULT SMTP - body ', body);
 
