@@ -366,7 +366,7 @@ export class WidgetSetUp extends WidgetSetUpBaseComponent implements OnInit, Aft
   HAS_CHANGED_GREETINGS = false;
 
   public preChatForm: boolean;
-  public nativeRating: boolean;
+  public nativeRating: boolean = true;
 
   public allowedOnSpecificUrlList: string[] = [];
   public allowedOnSpecificUrl: boolean;
@@ -2628,10 +2628,10 @@ export class WidgetSetUp extends WidgetSetUpBaseComponent implements OnInit, Aft
         // -----------------------------------------
         // NATIVE Rating
         // -----------------------------------------
-        if (project.widget.nativeRating) {
-          this.nativeRating = true;
+        if (Object.prototype.hasOwnProperty.call(project.widget, 'nativeRating')) {
+          this.nativeRating = project.widget.nativeRating === true;
         } else {
-          this.nativeRating = false;
+          this.nativeRating = true;
         }
 
         // --------------------------------------------
@@ -2922,7 +2922,7 @@ export class WidgetSetUp extends WidgetSetUpBaseComponent implements OnInit, Aft
         // @ nativeRating
         // WIDGET UNDEFINED
         // -----------------------------------------------------------------------
-        this.nativeRating = false;
+        this.nativeRating = true;
 
          // -----------------------------------------------------------------------
         // @ allowedOnSpecificUrl
@@ -4471,21 +4471,10 @@ export class WidgetSetUp extends WidgetSetUpBaseComponent implements OnInit, Aft
   //  @ Auto Rating
   // -----------------------------------------------------------------------
   toggleAutoRating(event) {
-    if (event.target.checked) {
-      this.nativeRating = true;
-      // *** ADD PROPERTY
-      this.widgetObj['nativeRating'] = this.nativeRating;
-      this.widgetService.updateWidgetProject(this.widgetObj)
-      this.logger.log('[WIDGET-SET-UP] - IS ENABLE Auto Rating ', event.target.checked)
-    } else {
-      this.nativeRating = false;
-
-      // *** REMOVE PROPERTY
-      delete this.widgetObj['nativeRating'];
-      this.widgetService.updateWidgetProject(this.widgetObj)
-
-      this.logger.log('[WIDGET-SET-UP] - IS ENABLED Auto Rating', event.target.checked)
-    }
+    this.nativeRating = event.target.checked === true;
+    this.widgetObj['nativeRating'] = this.nativeRating;
+    this.widgetService.updateWidgetProject(this.widgetObj)
+    this.logger.log('[WIDGET-SET-UP] - IS ENABLE Auto Rating ', this.nativeRating)
   }
 
   hasOpenedAdvancedSettigs() {
