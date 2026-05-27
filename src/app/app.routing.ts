@@ -639,7 +639,7 @@ const routes: Routes = [
     path: 'project/:projectid/widget-set-up',
     loadChildren: () => import('app/widget_components/widget-set-up/widget-set-up.module').then(m => m.WidgetSetUpModule),
     canActivate: [AuthGuard, RoleGuard],
-    data: [{ roles: ['owner', 'admin'] }]
+    data: [{ roles: ['owner', 'admin', 'supervisor'] }]
   },
   // { path: 'project/:projectid/widget-set-up', component: WidgetSetUp, canActivate: [AuthGuard] },
 
@@ -648,7 +648,7 @@ const routes: Routes = [
     path: 'project/:projectid/widget/translations',
     loadChildren: () => import('app/widget_components/widget-multilanguage/widget-multilanguage.module').then(m => m.WidgetMultilanguageModule),
     canActivate: [AuthGuard, RoleGuard],
-    data: [{ roles: ['owner', 'admin'] }]
+    data: [{ roles: ['owner', 'admin', 'supervisor'] }]
   },
   // { path: 'project/:projectid/widget/translations', component: WidgetMultilanguageComponent, canActivate: [AuthGuard] },
 
@@ -657,7 +657,7 @@ const routes: Routes = [
     path: 'project/:projectid/widget/translations/:calledby',
     loadChildren: () => import('app/widget_components/widget-multilanguage/widget-multilanguage.module').then(m => m.WidgetMultilanguageModule),
     canActivate: [AuthGuard, RoleGuard],
-    data: [{ roles: ['owner', 'admin'] }]
+    data: [{ roles: ['owner', 'admin', 'supervisor'] }]
   },
 
   // Widget installation
