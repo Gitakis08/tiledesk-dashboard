@@ -728,7 +728,7 @@ export class ProjectService {
     return update$;
   }
 
-  public sendTestEmail(recipientemail, smtp_host_name, smtp_port_number, smtp_connetion_security, smtp_usermame, smtp_pswd) {
+  public sendTestEmail(recipientemail, smtp_host_name, smtp_port_number, smtp_connetion_security, smtp_usermame, smtp_pswd, sender_email_address?) {
     let url = this.SERVER_BASE_PATH + this.projectID + '/emails/test/send'
     const httpOptions = {
       headers: new HttpHeaders({
@@ -738,7 +738,17 @@ export class ProjectService {
       })
     };
 
-    const body = { "to": recipientemail, "config": { "host": smtp_host_name, 'port': smtp_port_number, 'secure': smtp_connetion_security, 'user': smtp_usermame, 'pass': smtp_pswd } }
+    const body = {
+      "to": recipientemail,
+      "from": sender_email_address,
+      "config": {
+        "host": smtp_host_name,
+        'port': smtp_port_number,
+        'secure': smtp_connetion_security,
+        'user': smtp_usermame,
+        'pass': smtp_pswd
+      }
+    }
     this.logger.log('[PROJECT-SERV] SEND TEST EMAIL POST - body ', body);
 
     return this._httpclient

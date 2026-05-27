@@ -235,7 +235,15 @@ export class SmtpSettingsComponent implements OnInit {
       this.logger.log('[SMTP-SETTINGS] - SEND TEST EMAIL - recipientemail is undefined or null');
       return;
     }
-    this.projectService.sendTestEmail(recipientemail.toLowerCase(), this.smtp_host_name, this.smtp_port, this.smtp_connetion_security, this.smtp_usermame, this.smtp_pswd)
+    this.projectService.sendTestEmail(
+      recipientemail.toLowerCase(),
+      this.smtp_host_name,
+      this.smtp_port,
+      this.smtp_connetion_security,
+      this.smtp_usermame,
+      this.smtp_pswd,
+      this.sender_email_address ? this.sender_email_address.toLowerCase() : undefined
+    )
       .subscribe((res: any) => {
         //  console.log('[SMTP-SETTINGS] sendTestEmail res ', res)
         if (res && res.error && res.error.code === "EAUTH") {
