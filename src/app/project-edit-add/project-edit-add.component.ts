@@ -359,6 +359,7 @@ export class ProjectEditAddComponent implements OnInit, OnDestroy, AfterViewInit
   ngOnInit() {
 
     this.getBrowserVersion()
+    this.roleService.checkRoleForCurrentProject('project-settings');
     this.getCurrentUrlAndSwitchView();
     this.getProjectPlan();
     this.listenCancelSubscription();

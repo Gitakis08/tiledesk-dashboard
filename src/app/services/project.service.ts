@@ -761,9 +761,9 @@ export class ProjectService {
   // UPDATE WIDGET PROJECT  - todo from put to patch
   // -----------------------------------------------------------------
   public updateWidgetProject(widget_settings: any) {
-    let url = this.PROJECTS_URL + this.projectID;
+    let url = this.PROJECTS_URL + this.projectID + '/widget';
 
-    this.logger.log('[PROJECT-SERV] - UPDATE WIDGET PROJECT - PUT URL ', url);
+    this.logger.log('[PROJECT-SERV] - UPDATE WIDGET PROJECT - PATCH URL ', url);
 
     const httpOptions = {
       headers: new HttpHeaders({
@@ -775,10 +775,10 @@ export class ProjectService {
 
     const body = { 'widget': widget_settings };
 
-    this.logger.log('[PROJECT-SERV] UPDATE WIDGET PROJECT - PUT BODY ', body);
+    this.logger.log('[PROJECT-SERV] UPDATE WIDGET PROJECT - PATCH BODY ', body);
 
     const update$ = this._httpclient
-      .put(url, JSON.stringify(body), httpOptions)
+      .patch(url, JSON.stringify(body), httpOptions)
       .pipe(
         tap(() => {
           // Clear the project cache after successful widget update

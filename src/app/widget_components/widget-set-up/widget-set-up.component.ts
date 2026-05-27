@@ -40,6 +40,7 @@ import { LocalDbService } from 'app/services/users-local-db.service';
 import emojiRegex from 'emoji-regex';
 import { MatDialog } from '@angular/material/dialog';
 import { WidgetDomainsWithelistModalComponent } from '../widget-domains-withelist-modal/widget-domains-withelist-modal.component';
+import { RoleService } from 'app/services/role.service';
 
 
 @Component({
@@ -442,6 +443,7 @@ export class WidgetSetUp extends WidgetSetUpBaseComponent implements OnInit, Aft
     public selectOptionsTranslatePipe: SelectOptionsTranslatePipe,
     public localDbService: LocalDbService,
     public dialog: MatDialog,
+    public roleService: RoleService,
   ) {
     super(translate);
     const brand = brandService.getBrand();
@@ -465,7 +467,7 @@ export class WidgetSetUp extends WidgetSetUpBaseComponent implements OnInit, Aft
   }
 
   ngOnInit() {
-    // this.auth.checkRoleForCurrentProject();
+    this.roleService.checkRoleForCurrentProject('widget-settings');
     this.getProjectPlan()
     this.getProjectUserRole();
     // this.HAS_SELECT_INSTALL_WITH_CODE = false

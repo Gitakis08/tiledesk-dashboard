@@ -175,6 +175,7 @@
                         {{ "UserEditAddPage.SelectRole" | translate }}
                       </option>
                       <option value="admin">{{ 'admin' | translate }}</option>
+                      <option value="supervisor">{{ 'supervisor' | translate }}</option>
                       <option value="agent">{{ 'agent' | translate }} </option>
                     </select>
 
@@ -277,6 +278,9 @@
 
                           <option value="admin" [selected]="user_role === 'admin'">
                             {{ "UserEditAddPage.Admin" | translate }}
+                          </option>
+                          <option value="supervisor" [selected]="user_role === 'supervisor'">
+                            {{ "supervisor" | translate }}
                           </option>
                           <option value="agent" [selected]="user_role === 'agent'">
 

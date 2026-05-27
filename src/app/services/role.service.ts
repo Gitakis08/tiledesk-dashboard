@@ -9,6 +9,30 @@ import { Router } from '@angular/router';
   providedIn: 'root'
 })
 export class RoleService {
+  private readonly allowedRolesByContext: { [key: string]: string[] } = {
+    'canned': ['owner', 'admin', 'supervisor'],
+    'canned-list': ['owner', 'admin', 'supervisor'],
+    'canned-static': ['owner', 'admin', 'supervisor'],
+    'widget-settings': ['owner', 'admin', 'supervisor'],
+    'depts': ['owner', 'admin'],
+    'dept-edit-add': ['owner', 'admin'],
+    'dept-edit-add-static': ['owner', 'admin'],
+    'groups': ['owner', 'admin'],
+    'groups-static': ['owner', 'admin'],
+    'email-ticketing': ['owner', 'admin'],
+    'email-ticketing-static': ['owner', 'admin'],
+    'hours': ['owner', 'admin'],
+    'activities': ['owner', 'admin'],
+    'activities-static': ['owner', 'admin'],
+    'analytics': ['owner', 'admin'],
+    'analytics-static': ['owner', 'admin'],
+    'panoramica': ['owner', 'admin'],
+    'automations': ['owner', 'admin'],
+    'automation': ['owner', 'admin'],
+    'integrations': ['owner', 'admin'],
+    'tags': ['owner', 'admin'],
+    'project-settings': ['owner', 'admin']
+  };
 
   constructor(
     private router: Router,
@@ -42,7 +66,7 @@ export class RoleService {
       this.logger.log('[ROLE-SERV] checkRoleForCurrentProject projectUserRole ', projectUserRole)
       this.logger.log('[ROLE-SERV] checkRoleForCurrentProject > projectId ', projectId)
       if (projectUserRole) {
-        if (projectUserRole === 'agent') {
+        if (!this.isRoleAllowedForContext(projectUserRole, calledby)) {
           this.logger.log('[ROLE-SERV] - checkRoleForCurrentProject ', projectUserRole, ' RUN NAVIGATE TO unauthorized page')
           this.router.navigate([`project/${projectId}/unauthorized`])
       
@@ -53,7 +77,7 @@ export class RoleService {
         this.logger.log('[ROLE-SERV] - checkRoleForCurrentProject  projectUserRole * Error *', projectUserRole)
         const _projectUserRole = await this.getProjectUser(userId, projectId)
         this.logger.log('[ROLE-SERV] - checkRoleForCurrentProject  _projectUserRole GET from remote', _projectUserRole)
-        if (_projectUserRole === 'agent') {
+        if (!this.isRoleAllowedForContext(_projectUserRole, calledby)) {
           this.logger.log('[ROLE-SERV] - checkRoleForCurrentProject ', projectUserRole, ' RUN NAVIGATE TO unauthorized page')
           this.router.navigate([`project/${projectId}/unauthorized`])
         }
@@ -79,6 +103,19 @@ export class RoleService {
 
       // }
     }
+  }
+
+  private isRoleAllowedForContext(role: string, calledby: string): boolean {
+    if (!role) {
+      return false;
+    }
+
+    const allowedRoles = this.allowedRolesByContext[calledby];
+    if (allowedRoles) {
+      return allowedRoles.includes(role);
+    }
+
+    return role !== 'agent';
   }
 
   getProjectUser(currentUserId: string, prjct_id: string): Promise<any> {

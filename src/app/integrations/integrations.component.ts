@@ -15,6 +15,7 @@ import { PLAN_NAME } from 'app/utils/util';
 import { AppStoreService } from 'app/services/app-store.service';
 import { environment } from 'environments/environment';
 import { AppConfigService } from 'app/services/app-config.service';
+import { RoleService } from 'app/services/role.service';
 
 
 const swal = require('sweetalert');
@@ -89,6 +90,7 @@ export class IntegrationsComponent implements OnInit, OnDestroy {
     private projectPlanService: ProjectPlanService,
     private appService: AppStoreService,
     public appConfigService: AppConfigService,
+    private roleService: RoleService,
   ) {
     const _brand = this.brand.getBrand();
     this.logger.log("[INTEGRATION-COMP] brand: ", _brand);
@@ -99,6 +101,7 @@ export class IntegrationsComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit(): void {
+    this.roleService.checkRoleForCurrentProject('integrations');
     this.getCurrentProject();
     this.getLoggedUser()
     this.getOSCODE();

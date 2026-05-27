@@ -18,7 +18,7 @@
     <!-- -------------------------------------------------------- -->
     <!--  Widget  -->
     <!-- -------------------------------------------------------- -->
-    <ng-container *ngIf="USER_ROLE !== 'agent'">
+    <ng-container *ngIf="canAccessSupervisorScope()">
       <li [ngClass]="{'active-item': WIDGET_SETUP_ROUTE_IS_ACTIVE}" (click)="goToWidgetSetUp()"
         matTooltipClass="custom-mat-tooltip-in-settings-sidebar" matTooltip="Widget" #tooltip="matTooltip"
         matTooltipPosition='right' matTooltipHideDelay="100" [matTooltipDisabled]="IS_OPEN">
@@ -42,7 +42,7 @@
     <!-- -------------------------------------------------------- -->
     <!-- Widget installation -->
     <!-- -------------------------------------------------------- -->
-    <ng-container *ngIf="USER_ROLE !== 'agent'">
+    <ng-container *ngIf="canAccessAdminScope()">
       <li [ngClass]="{'active-item': WIDGET_INSTALLATION_ROUTE_IS_ACTIVE}" (click)="goToWidgetInstallation()"
         matTooltipClass="custom-mat-tooltip-in-settings-sidebar" matTooltip="{{'Installation' | translate}}"
         #tooltip="matTooltip" matTooltipPosition='right' matTooltipHideDelay="100" [matTooltipDisabled]="IS_OPEN">
@@ -67,7 +67,7 @@
     <!-- -------------------------------------------------------- -->
     <!-- Widget Transtations  -->
     <!-- -------------------------------------------------------- -->
-    <ng-container *ngIf="USER_ROLE !== 'agent'">
+    <ng-container *ngIf="canAccessSupervisorScope()">
       <li [ngClass]="{'active-item': TRANSLATIONS_ROUTE_IS_ACTIVE}" (click)="goToMultilanguage()"
         matTooltipClass="custom-mat-tooltip-in-settings-sidebar" matTooltip="{{translations}}" #tooltip="matTooltip"
         matTooltipPosition='right' matTooltipHideDelay="100" [matTooltipDisabled]="IS_OPEN">
@@ -91,7 +91,7 @@
     <!-- ------------------------------------------------------- -->
     <!-- Routing & depts -->
     <!-- ------------------------------------------------------- -->
-    <ng-container *ngIf="USER_ROLE !== 'agent'">
+    <ng-container *ngIf="canAccessAdminScope()">
       <li [ngClass]="{'active-item': DEPTS_ROUTE_IS_ACTIVE  || EDIT_DEPT_ROUTE_IS_ACTIVE || ADD_DEPT_ROUTE_IS_ACTIVE}"
         (click)="goToDepartments()" matTooltipClass="custom-mat-tooltip-in-settings-sidebar"
         matTooltip="{{routing_and_depts_lbl}}" #tooltip="matTooltip" matTooltipPosition='right'
@@ -119,7 +119,7 @@
     <!-- ------------------------------------------------------- -->
     <!-- Teammates & Groups || EDIT_GROUP_ROUTE_IS_ACTIVE -->
     <!-- ------------------------------------------------------- -->
-    <ng-container *ngIf="USER_ROLE !== 'agent'">
+    <ng-container *ngIf="canAccessAdminScope()">
       <li [ngClass]="{'active-item': 
         TEAMMATES_ROUTE_IS_ACTIVE || 
         TEAMMATES_ADD_ROUTE_IS_ACTIVE || 
@@ -156,7 +156,7 @@
     <!-- ------------------------------------------------------- -->
     <!-- EMAIL-TICKETING -->
     <!-- ------------------------------------------------------- -->
-    <ng-container *ngIf="USER_ROLE !== 'agent' && isVisibleETK">
+    <ng-container *ngIf="canAccessAdminScope() && isVisibleETK">
       <li [ngClass]="{'active-item': EMAIL_TICKETING_ROUTE_IS_ACTIVE}" (click)="goToEmailTicketing()"
         matTooltipClass="custom-mat-tooltip-in-settings-sidebar" matTooltip="{{'EmailTicketing' | translate}}"
         #tooltip="matTooltip" matTooltipPosition='right' matTooltipHideDelay="100" [matTooltipDisabled]="IS_OPEN">
@@ -181,7 +181,7 @@
     <!-- ------------------------------------------------------- -->
     <!-- Canned responses -->
     <!-- ------------------------------------------------------- -->
-    <ng-container *ngIf="isVisibleCAR && USER_ROLE !== 'agent'">
+    <ng-container *ngIf="isVisibleCAR && canAccessSupervisorScope()">
       <li [ngClass]="{'active-item': CANNED_RESPONSES_ROUTE_IS_ACTIVE}" (click)="goToCannedResponses()"
         matTooltipClass="custom-mat-tooltip-in-settings-sidebar"
         matTooltip="{{'CannedResponses.CannedResponses' | translate}}" #tooltip="matTooltip" matTooltipPosition='right'
@@ -207,7 +207,7 @@
     <!-- -------------------------------------------------------------  -->
     <!-- Tags (menu item name 'Labels' then renamend tags 26gen21)  -->
     <!-- ------------------------------------------------------------- -->
-    <ng-container *ngIf="isVisibleLBS && USER_ROLE !== 'agent'">
+    <ng-container *ngIf="isVisibleLBS && canAccessAdminScope()">
       <li [ngClass]="{'active-item': TAG_ROUTE_IS_ACTIVE}" (click)="goToTags()"
         matTooltipClass="custom-mat-tooltip-in-settings-sidebar" matTooltip=" {{'Tags.ConversationsTAG' | translate}}"
         #tooltip="matTooltip" matTooltipPosition='right' matTooltipHideDelay="100" [matTooltipDisabled]="IS_OPEN">
@@ -233,7 +233,7 @@
     <!-- -------------------------------------------------------- -->
     <!--  Operatin Hours  -->
     <!-- -------------------------------------------------------- -->
-    <ng-container *ngIf="isVisibleOPH && USER_ROLE !== 'agent'">
+    <ng-container *ngIf="isVisibleOPH && canAccessAdminScope()">
       <li [ngClass]="{'active-item': OPERATING_HOURS_ROUTE_IS_ACTIVE}" (click)="goToOperatingHours()"
         matTooltipClass="custom-mat-tooltip-in-settings-sidebar" matTooltip="{{ 'Hours' | translate }}"
         #tooltip="matTooltip" matTooltipPosition='right' matTooltipHideDelay="100" [matTooltipDisabled]="IS_OPEN">
@@ -282,7 +282,7 @@
     <!-- -------------------------------------------------------- -->
     <!--  Knowledge Bases  -->
     <!-- -------------------------------------------------------- -->
-    <ng-container *ngIf="isVisibleKNB && USER_ROLE !== 'agent' && ARE_NEW_KB === false">
+    <ng-container *ngIf="isVisibleKNB && canAccessAdminScope() && ARE_NEW_KB === false">
       <li [ngClass]="{'active-item': KNOWLEDGE_BASES_ROUTE_IS_ACTIVE}" (click)="goToKnowledgeBases()"
         matTooltipClass="custom-mat-tooltip-in-settings-sidebar" matTooltip="{{ 'KnowledgeBases' | translate }}"
         #tooltip="matTooltip" matTooltipPosition='right' matTooltipHideDelay="100" [matTooltipDisabled]="IS_OPEN">
@@ -310,7 +310,7 @@
     <!-- -------------------------------------------------------- -->
     <!--  Integrations  -->
     <!-- -------------------------------------------------------- -->
-    <ng-container *ngIf="isVisibleINT && USER_ROLE !== 'agent'">
+    <ng-container *ngIf="isVisibleINT && canAccessAdminScope()">
       <li [ngClass]="{'active-item': INTEGRATIONS_ROUTE_IS_ACTIVE}" (click)="goToIntegrations()"
         matTooltipClass="custom-mat-tooltip-in-settings-sidebar" matTooltip="Integrations" #tooltip="matTooltip"
         matTooltipPosition='right' matTooltipHideDelay="100" [matTooltipDisabled]="IS_OPEN">
@@ -335,7 +335,7 @@
     <!-- ----------------------------- -->
     <!-- APPS  -->
     <!-- ----------------------------- -->
-    <ng-container *ngIf="isVisibleAPP && USER_ROLE !== 'agent'">
+    <ng-container *ngIf="isVisibleAPP && canAccessAdminScope()">
       <li [ngClass]="{'active-item': APPS_ROUTE_IS_ACTIVE}" (click)="goToApps()"
         matTooltipClass="custom-mat-tooltip-in-settings-sidebar" matTooltip="{{ 'Apps' | translate }}"
         #tooltip="matTooltip" matTooltipPosition='right' matTooltipHideDelay="100" [matTooltipDisabled]="IS_OPEN">
@@ -363,7 +363,7 @@
     <!-- -------------------------------------------------------- -->
     <!--  Project Settings  -->
     <!-- -------------------------------------------------------- -->
-    <ng-container *ngIf="USER_ROLE !== 'agent'">
+    <ng-container *ngIf="canAccessAdminScope()">
       <li [ngClass]="{'active-item': 
         PROJECT_SETTINGS_ROUTE_IS_ACTIVE || 
         SMTP_ROUTE_IS_ACTIVE || 

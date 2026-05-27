@@ -9,6 +9,7 @@ import { AuthService } from '../core/auth.service';
 import { LoggerService } from '../services/logger/logger.service';
 import { URL_tag_doc } from 'app/utils/util';
 import { BrandService } from 'app/services/brand.service';
+import { RoleService } from 'app/services/role.service';
 @Component({
   selector: 'appdashboard-tags',
   templateUrl: './tags.component.html',
@@ -58,12 +59,14 @@ export class TagsComponent implements OnInit, AfterViewInit {
     private auth: AuthService,
     private logger: LoggerService,
     public brandService: BrandService,
+    private roleService: RoleService,
   ) { 
     const brand = brandService.getBrand(); 
     this.hideHelpLink= brand['DOCS'];
   }
 
   ngOnInit() {
+    this.roleService.checkRoleForCurrentProject('tags');
     this.getTag();
     this.translateNotificationMsgs();
     this.getImageStorage();

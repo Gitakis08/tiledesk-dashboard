@@ -91,6 +91,14 @@ export class SettingsSidebarComponent implements OnInit {
     private kbService: KnowledgeBaseService
   ) { }
 
+  canAccessSupervisorScope(): boolean {
+    return this.USER_ROLE === 'owner' || this.USER_ROLE === 'admin' || this.USER_ROLE === 'supervisor';
+  }
+
+  canAccessAdminScope(): boolean {
+    return this.USER_ROLE === 'owner' || this.USER_ROLE === 'admin';
+  }
+
   ngOnInit() {
     this.getUserRole();
     this.getOSCODE();
