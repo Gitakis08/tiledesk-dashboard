@@ -161,46 +161,51 @@ export class ProjectsComponent implements OnInit, AfterContentInit, OnDestroy {
     },
     {
       id: 14,
+      name: 'el',
+      avatar: 'assets/img/language_flag/el.png'
+    },
+    {
+      id: 15,
       name: 'pl',
       avatar: 'assets/img/language_flag/pl.png'
     },
     {
-      id: 15,
+      id: 16,
       name: 'nl',
       avatar: 'assets/img/language_flag/nl.png'
-    },
-    {
-      id: 16,
-      name: 'cs',
-      avatar: 'assets/img/language_flag/cs.png'
-    },
-    {
-      id: 14,
-      name: 'pl',
-      avatar: 'assets/img/language_flag/pl.png'
-    },
-    {
-      id: 15,
-      name: 'nl',
-      avatar: 'assets/img/language_flag/nl.png'
-    },
-    {
-      id: 16,
-      name: 'cs',
-      avatar: 'assets/img/language_flag/cs.png'
     },
     {
       id: 17,
+      name: 'cs',
+      avatar: 'assets/img/language_flag/cs.png'
+    },
+    {
+      id: 18,
+      name: 'pl',
+      avatar: 'assets/img/language_flag/pl.png'
+    },
+    {
+      id: 19,
+      name: 'nl',
+      avatar: 'assets/img/language_flag/nl.png'
+    },
+    {
+      id: 20,
+      name: 'cs',
+      avatar: 'assets/img/language_flag/cs.png'
+    },
+    {
+      id: 21,
       name: 'zh',
       avatar: 'assets/img/language_flag/zh.png'
     },
     {
-      id: 18,
+      id: 22,
       name: 'kk',
       avatar: 'assets/img/language_flag/kk.png'
     },
     {
-      id: 19,
+      id: 23,
       name: 'uz',
       avatar: 'assets/img/language_flag/uz.png'
     }

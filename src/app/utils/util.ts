@@ -162,7 +162,7 @@ export const LogLevel = {
     'DEBUG': 3
 }
 
-export const tranlatedLanguage = ['it', 'en', 'de', 'es', 'pt', 'fr', 'ru', 'tr', 'sr', 'ar', 'uk', 'sv', 'az', 'kk', 'uz']
+export const tranlatedLanguage = ['it', 'en', 'de', 'es', 'pt', 'fr', 'ru', 'tr', 'sr', 'ar', 'uk', 'sv', 'az', 'el', 'kk', 'uz']
 
 export const emailDomainWhiteList = [
     'gmail.com',
@@ -1234,4 +1234,3 @@ export const URL_WA_Send_Message = 'https://guide.tiledesk.com/apps-and-integrat
 export const URL_IF_OH_Action = 'https://guide.tiledesk.com/ai-chatbots-and-automation/actions-explained/if-operating-hours#how-to-configure-the-action'
 export const URL_kb_contents_tags = 'https://guide.tiledesk.com/ai-chatbots-and-automation/knowledge-base/how-to-use-synchronized-sitemap-in-knowledge-base#rag-tags-configuration'
 export const URL_kb_synced_Sitemap = 'https://guide.tiledesk.com/ai-chatbots-and-automation/knowledge-base/how-to-use-synchronized-sitemap-in-knowledge-base'
-

@@ -150,11 +150,16 @@ export class UserProfileComponent extends PricingBaseComponent implements OnInit
     },
     {
       id: 14,
+      name: 'el',
+      avatar: 'assets/img/language_flag/el.png'
+    },
+    {
+      id: 15,
       name: 'kk',
       avatar: 'assets/img/language_flag/kk.png'
     },
     {
-      id: 15,
+      id: 16,
       name: 'uz',
       avatar: 'assets/img/language_flag/uz.png'
     }
