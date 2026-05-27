@@ -21,6 +21,7 @@ import { BotsBaseComponent } from '../bots-base/bots-base.component';
 import { BrandService } from '../../services/brand.service';
 import { DepartmentService } from '../../services/department.service';
 import { avatarPlaceholder, checkAcceptedFile, getColorBck } from '../../utils/util';
+import { checkImageExists as probeImageExists } from '../../utils/image-existence-cache';
 import { LoggerService } from '../../services/logger/logger.service';
 import {
   URL_microlanguage_for_dialogflow_images_videos,
@@ -739,14 +740,7 @@ export class FaqComponent extends BotsBaseComponent implements OnInit {
   }
 
   verifyImageURL(image_url, callBack) {
-    const img = new Image();
-    img.src = image_url;
-    img.onload = function () {
-      callBack(true);
-    };
-    img.onerror = function () {
-      callBack(false);
-    };
+    probeImageExists(image_url, callBack);
   }
 
 

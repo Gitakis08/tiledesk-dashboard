@@ -2,6 +2,7 @@ import { Component, OnInit, Input, OnChanges, SimpleChanges } from '@angular/cor
 import { DomSanitizer } from '@angular/platform-browser';
 import { BrandService } from 'app/services/brand.service';
 import { avatarPlaceholder, getColorBck } from 'app/utils/util';
+import { checkImageExists as probeImageExists } from 'app/utils/image-existence-cache';
 
 
 @Component({
@@ -103,14 +104,7 @@ export class WidgetHomeComponent implements OnInit, OnChanges {
   }
 
   checkImageExists(imageUrl, callBack) {
-    var imageData = new Image()
-    imageData.onload = function () {
-      callBack(true)
-    }
-    imageData.onerror = function () {
-      callBack(false)
-    }
-    imageData.src = imageUrl
+    probeImageExists(imageUrl, callBack);
   }
 
     createProjectUserAvatar(user) {

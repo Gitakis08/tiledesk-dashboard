@@ -6,6 +6,7 @@ import { GroupService } from 'app/services/group.service';
 import { LoggerService } from 'app/services/logger/logger.service';
 import { UsersService } from 'app/services/users.service';
 import { APPSUMO_PLAN_SEATS, APP_SUMO_PLAN_NAME, PLAN_NAME, PLAN_SEATS, avatarPlaceholder, getColorBck } from 'app/utils/util';
+import { checkImageExists as probeImageExists } from 'app/utils/image-existence-cache';
 import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators'
 import { HomeInviteTeammateModalComponent } from './home-invite-teammate-modal/home-invite-teammate-modal.component';
@@ -332,14 +333,7 @@ export class HomeCreateTeammateComponent extends PricingBaseComponent implements
 
 
   checkImageExists(imageUrl, callBack) {
-    var imageData = new Image();
-    imageData.onload = function () {
-      callBack(true);
-    };
-    imageData.onerror = function () {
-      callBack(false);
-    };
-    imageData.src = imageUrl;
+    probeImageExists(imageUrl, callBack);
   }
 
 

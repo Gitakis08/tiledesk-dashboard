@@ -10,6 +10,7 @@ import { Subscription } from 'rxjs'
 import { AppConfigService } from '../services/app-config.service'
 import { avatarPlaceholder, getColorBck, PLAN_SEATS, PLAN_NAME, APP_SUMO_PLAN_NAME, APPSUMO_PLAN_SEATS } from '../utils/util'
 import { URL_understanding_default_roles } from '../utils/util'
+import { checkImageExists as probeImageExists } from '../utils/image-existence-cache'
 import { LoggerService } from '../services/logger/logger.service'
 import { BrandService } from 'app/services/brand.service'
 import { CachePuService } from 'app/services/cache/cache-pu.service'
@@ -776,14 +777,7 @@ export class UsersComponent extends PricingBaseComponent implements OnInit, Afte
   }
 
   checkImageExists(imageUrl, callBack) {
-    var imageData = new Image()
-    imageData.onload = function () {
-      callBack(true)
-    }
-    imageData.onerror = function () {
-      callBack(false)
-    }
-    imageData.src = imageUrl
+    probeImageExists(imageUrl, callBack);
   }
 
   getPendingInvitation() {

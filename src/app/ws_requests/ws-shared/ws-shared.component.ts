@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { LocalDbService } from '../../services/users-local-db.service';
 import { BotLocalDbService } from '../../services/bot-local-db.service';
 import { CHANNELS, CHANNELS_NAME, avatarPlaceholder, getColorBck } from '../../utils/util';
+import { checkImageExists as probeImageExists } from '../../utils/image-existence-cache';
 import { Router } from '@angular/router';
 import { WsRequestsService } from '../../services/websocket/ws-requests.service';
 import { FaqKbService } from '../../services/faq-kb.service';
@@ -471,14 +472,7 @@ export class WsSharedComponent implements OnInit {
   }
 
   checkImageExists(imageUrl, callBack) {
-    var imageData = new Image();
-    imageData.onload = function () {
-      callBack(true);
-    };
-    imageData.onerror = function () {
-      callBack(false);
-    };
-    imageData.src = imageUrl;
+    probeImageExists(imageUrl, callBack);
   }
 
 

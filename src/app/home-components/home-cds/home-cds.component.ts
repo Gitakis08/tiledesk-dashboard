@@ -19,6 +19,7 @@ import { ProjectPlanService } from 'app/services/project-plan.service';
 import { LocalDbService } from 'app/services/users-local-db.service';
 import { UsersService } from 'app/services/users.service';
 import { goToCDSVersion } from 'app/utils/util';
+import { checkImageExists as probeImageExists } from 'app/utils/image-existence-cache';
 import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators'
 const Swal = require('sweetalert2')
@@ -261,14 +262,7 @@ export class HomeCdsComponent extends PricingBaseComponent implements OnInit, On
   }
 
   checkImageExists(imageUrl, callBack) {
-    var imageData = new Image();
-    imageData.onload = function () {
-      callBack(true);
-    };
-    imageData.onerror = function () {
-      callBack(false);
-    };
-    imageData.src = imageUrl;
+    probeImageExists(imageUrl, callBack);
   }
 
 

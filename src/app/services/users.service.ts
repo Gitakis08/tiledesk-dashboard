@@ -13,6 +13,7 @@ import { BotLocalDbService } from '../services/bot-local-db.service';
 import { AppConfigService } from '../services/app-config.service';
 import { WebSocketJs } from "../services/websocket/websocket-js";
 import { avatarPlaceholder, getColorBck } from '../utils/util';
+import { checkImageExists as probeImageExists } from '../utils/image-existence-cache';
 import { LoggerService } from '../services/logger/logger.service';
 import { CachePuService } from './cache/cache-pu.service';
 import { map, shareReplay, tap } from 'rxjs/operators';
@@ -199,14 +200,7 @@ export class UsersService {
   }
 
   verifyImageURL(image_url, callBack) {
-    const img = new Image();
-    img.src = image_url;
-    img.onload = function () {
-      callBack(true);
-    };
-    img.onerror = function () {
-      callBack(false);
-    };
+    probeImageExists(image_url, callBack);
   }
 
   /**
@@ -721,14 +715,7 @@ export class UsersService {
 
 
   checkImageExists(imageUrl, callBack) {
-    var imageData = new Image();
-    imageData.onload = function () {
-      callBack(true);
-    };
-    imageData.onerror = function () {
-      callBack(false);
-    };
-    imageData.src = imageUrl;
+    probeImageExists(imageUrl, callBack);
   }
 
   createAvatarInitialsAndBckgrnd(user) {

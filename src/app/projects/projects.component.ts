@@ -18,6 +18,7 @@ import { WsRequestsService } from '../services/websocket/ws-requests.service';
 import { LoggerService } from '../services/logger/logger.service';
 import { TranslateService } from '@ngx-translate/core';
 import { APP_SUMO_PLAN_NAME, PLAN_NAME, tranlatedLanguage } from 'app/utils/util';
+import { checkImageExists as probeImageExists } from 'app/utils/image-existence-cache';
 import { MatDialog } from '@angular/material/dialog';
 import { LogoutModalComponent } from 'app/auth/logout-modal/logout-modal.component';
 @Component({
@@ -517,14 +518,7 @@ export class ProjectsComponent implements OnInit, AfterContentInit, OnDestroy {
   }
 
   checkImageExists(imageUrl, callBack) {
-    var imageData = new Image();
-    imageData.onload = function () {
-      callBack(true);
-    };
-    imageData.onerror = function () {
-      callBack(false);
-    };
-    imageData.src = imageUrl;
+    probeImageExists(imageUrl, callBack);
   }
 
 

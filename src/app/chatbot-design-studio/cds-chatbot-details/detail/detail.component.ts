@@ -16,6 +16,7 @@ import { LoggerService } from 'app/services/logger/logger.service';
 import { UploadImageNativeService } from 'app/services/upload-image-native.service';
 import { UploadImageService } from 'app/services/upload-image.service';
 import { avatarPlaceholder, getColorBck } from 'app/utils/util';
+import { checkImageExists as probeImageExists } from 'app/utils/image-existence-cache';
 const swal = require('sweetalert');
 
 @Component({
@@ -355,14 +356,7 @@ export class CDSDetailBotDetailComponent extends BotsBaseComponent implements On
   }
 
   verifyImageURL(image_url, callBack) {
-    const img = new Image();
-    img.src = image_url;
-    img.onload = function () {
-      callBack(true);
-    };
-    img.onerror = function () {
-      callBack(false);
-    };
+    probeImageExists(image_url, callBack);
   }
 
  

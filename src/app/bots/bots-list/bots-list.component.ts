@@ -17,6 +17,7 @@ import { BotLocalDbService } from 'app/services/bot-local-db.service';
 import { MatDialog } from '@angular/material/dialog';
 import { CloneBotComponent } from './clone-bot/clone-bot.component';
 import { CHATBOT_MAX_NUM, containsXSS, formatBytesWithDecimal, goToCDSVersion, PLAN_NAME } from 'app/utils/util';
+import { checkImageExists as probeImageExists } from 'app/utils/image-existence-cache';
 import { ProjectPlanService } from 'app/services/project-plan.service';
 import { forkJoin, Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators'
@@ -1138,14 +1139,7 @@ export class BotListComponent extends PricingBaseComponent implements OnInit, On
   }
 
   verifyImageURL(image_url, callBack) {
-    const img = new Image();
-    img.src = image_url;
-    img.onload = function () {
-      callBack(true);
-    };
-    img.onerror = function () {
-      callBack(false);
-    };
+    probeImageExists(image_url, callBack);
   }
 
   getOSCODE() {

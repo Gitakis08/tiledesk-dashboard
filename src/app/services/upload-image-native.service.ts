@@ -8,6 +8,7 @@ import { LoggerService } from '../services/logger/logger.service';
 import { formatBytesWithDecimal } from 'app/utils/util';
 import { NotifyService } from 'app/core/notify.service';
 import { TranslateService } from '@ngx-translate/core';
+import { forgetImageExistence } from '../utils/image-existence-cache';
 
 @Injectable()
 export class UploadImageNativeService {
@@ -96,6 +97,7 @@ export class UploadImageNativeService {
           this.logger.log('[UPLOAD-IMAGE-NATIVE.SERV] UPLOAD USER PHOTO PROFILE - RES MSG ', res.message);
 
           if (res.message === 'Image uploaded successfully') {
+            forgetImageExistence();
             this.userImageWasUploaded_Native.next(true);
           } else {
             this.userImageWasUploaded_Native.next(false);
@@ -142,6 +144,7 @@ export class UploadImageNativeService {
         this.logger.log('[UPLOAD-IMAGE-NATIVE.SERV] DELETE PHOTO PROFILE - RES ', res);
 
         if (res && res.message === "File deleted successfully") {
+          forgetImageExistence();
           if (calledfor === 'user') {
             this.hasDeletedUserPhoto.next(true);
           }
@@ -182,6 +185,7 @@ export class UploadImageNativeService {
           this.logger.log('[UPLOAD-IMAGE-NATIVE.SERV] UPLOAD BOT PHOTO PROFILE - RES MSG ', res.message);
           if (res.message === 'Image uploaded successfully' || res.message === 'Image uploded successfully') {
 
+            forgetImageExistence();
             this.botImageWasUploaded_Native.next(true);
           } else {
             this.botImageWasUploaded_Native.next(false);

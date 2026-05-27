@@ -5,6 +5,7 @@ import 'firebase/storage';
 import { LoggerService } from '../services/logger/logger.service';
 import { NotifyService } from '../core/notify.service';
 import { TranslateService } from '@ngx-translate/core';
+import { forgetImageExistence } from '../utils/image-existence-cache';
 @Injectable()
 export class UploadImageService {
 
@@ -95,6 +96,7 @@ export class UploadImageService {
           uploadTask.snapshot.ref.getDownloadURL().then(function (downloadURL) {
             self.logger.log('[UPLOAD-IMAGE-FB.SERV] - UPLOAD USER PHOTO - File available at', downloadURL);
 
+            forgetImageExistence();
             self.userImageWasUploaded.next(true);
           });
         }
@@ -121,6 +123,7 @@ export class UploadImageService {
     deletePhoto.delete().then(() => {
       this.logger.log('[UPLOAD-IMAGE-FB.SERV] - DELETE USER PHOTO ')
 
+      forgetImageExistence();
       this.hasDeletedUserPhoto.next(true);
 
     }).catch((error) => {
@@ -207,6 +210,7 @@ export class UploadImageService {
         uploadTask.snapshot.ref.getDownloadURL().then(function (downloadURL) {
           self.logger.log('[UPLOAD-IMAGE-FB.SERV] - BOT PROFILE IMAGE UPLOAD - File available at', downloadURL);
 
+          forgetImageExistence();
           self.botImageWasUploaded.next(true);
         });
       }
@@ -233,7 +237,7 @@ export class UploadImageService {
     deleteBotPhoto.delete().then(() => {
       this.logger.log('[UPLOAD-IMAGE-FB.SERV] - DELETE BOT PHOTO ')
 
-
+      forgetImageExistence();
     }).catch((error) => {
       this.logger.error('[UPLOAD-IMAGE-FB.SERV] - DELETE BOT PHOTO - ERROR ', error)
     });
