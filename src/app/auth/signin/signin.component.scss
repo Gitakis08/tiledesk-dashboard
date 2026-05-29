@@ -161,21 +161,6 @@ input:-webkit-autofill {
 }
 
 
-.left-panel-signup-link {
-  margin-top: 15px;
-  line-height: 21px;
-  font-family: var(--header-font-family);
-  text-align: left !important;
-  color: #222;
-  font-weight: 400;
-  font-size: 15px;
-}
-
-.left-panel-signup-link>span {
-  color: var(--blue-20);
-  cursor: pointer;
-}
-
 .signin-forgot-pswrd {
   // margin-top: 15px;
   // line-height: 21px;
@@ -276,10 +261,6 @@ label {
     width: 0%;
   }
 
-  .left-panel-signup-link {
-    display: block;
-  }
-
   .left-panel-gotov1-link {
     display: block;
   }
@@ -310,10 +291,6 @@ label {
   .right-logo {
     display: none;
   }
-
-  // .left-panel-signup-link {
-  //   display: none;
-  // }
 
   .left-panel-gotov1-link {
     display: none;
@@ -514,31 +491,64 @@ label {
 .oAuth2-button {
   display: inline-flex;
   align-items: center;
-  padding: 0px;
+  justify-content: center;
+  position: relative;
+  padding: 0 16px;
   border-radius: 5px;
-  border: 1px solid #f0806f;
+  border: 1px solid #8c8c8c;
   font-size: 16px;
   font-weight: 500;
   font-family: "Poppins", "Roboto", "Arial", sans-serif;
   width: 100%;
   background: #fff;
-  color: #f0806f !important;
+  color: #5e5e5e !important;
   margin-bottom: 20px;
   height: 56px;
+  transition: background-color 0.15s ease, border-color 0.15s ease, color 0.15s ease, box-shadow 0.15s ease;
 }
 
 .oAuth2-button:hover {
-  background: rgba(240, 128, 111, .1)
+  background: #f7f7f7;
+  border-color: #6f6f6f;
+  color: #1f1f1f !important;
 }
 
-.oAuth2-button>.oAuth2-button-svg-wpr {
-  margin-right: 10px;
-  background: trasparent;
-  padding: 10px;
-  border-radius: 5px;
+.oAuth2-button:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(0, 120, 212, 0.35);
 }
 
-// .oAuth2-button:hover>.oAuth2-button-svg-wpr {
-//   background: rgba(240, 128, 111, .4) !important;
+.microsoft-logo {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2px;
+  width: 21px;
+  height: 21px;
+  position: absolute;
+  left: 18px;
+}
 
-// }
+.microsoft-logo-square {
+  display: block;
+}
+
+.microsoft-logo-red {
+  background: #f25022;
+}
+
+.microsoft-logo-green {
+  background: #7fba00;
+}
+
+.microsoft-logo-blue {
+  background: #00a4ef;
+}
+
+.microsoft-logo-yellow {
+  background: #ffb900;
+}
+
+.microsoft-signin-label {
+  font-weight: 500;
+  line-height: 1;
+}

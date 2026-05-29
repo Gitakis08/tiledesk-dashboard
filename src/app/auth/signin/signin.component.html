@@ -110,19 +110,17 @@
 
         <div class="login-container">
 
-          <button *ngIf="OAUTH2_SIGNIN_ENABLED" type="button" rel="opener" class="oAuth2-button" (click)="signinWithOAuth2()">
-           
-            <div class="oAuth2-button-svg-wpr" style="">
-              <svg xmlns="http://www.w3.org/2000/svg" height="28px" viewBox="0 -960 960 960" width="28px"
-                fill="#f0806f" style="position: relative;top: 2px;">
-                <path
-                  d="M480-440q-58 0-99-41t-41-99q0-58 41-99t99-41q58 0 99 41t41 99q0 58-41 99t-99 41Zm0-80q25 0 42.5-17.5T540-580q0-25-17.5-42.5T480-640q-25 0-42.5 17.5T420-580q0 25 17.5 42.5T480-520Zm0 460L120-280v-400l360-220 360 220v400L480-60Zm0-93 147-91q-34-18-71.5-27t-75.5-9q-38 0-75.5 9T333-244l147 91ZM256-291q50-34 107-51.5T480-360q60 0 117 17.5T704-291l56-33v-311L480-806 200-635v311l56 33Zm224-189Z" />
-              </svg>
-            </div>
-            <div style="padding: 10px 10px 10px 0px; font-weight: 500; width: calc(100% - 91px);">
+          <button *ngIf="OAUTH2_SIGNIN_ENABLED" type="button" rel="opener" class="oAuth2-button" (click)="signinWithOAuth2()"
+            aria-label="Sign in with Microsoft">
+            <span class="microsoft-logo" aria-hidden="true">
+              <span class="microsoft-logo-square microsoft-logo-red"></span>
+              <span class="microsoft-logo-square microsoft-logo-green"></span>
+              <span class="microsoft-logo-square microsoft-logo-blue"></span>
+              <span class="microsoft-logo-square microsoft-logo-yellow"></span>
+            </span>
+            <span class="microsoft-signin-label">
               Sign in with Microsoft
-            </div>
-            
+            </span>
           </button>
 
 
@@ -198,15 +196,6 @@
             </button>
 
 
-            <!-- <div class="left-panel-signup-link" (click)="goToSignup()">
-             
-                {{ "DontHaveAnAccountYet" | translate }}
-                <span style="color: #03a5e8; cursor: pointer;">
-                  {{ "SignUp" | translate }}
-                </span>
-             
-            </div> -->
-
             <!-- <p class="signin-forgot-pswrd">
               {{ "ForgotYourPassword" | translate }}?
               <span style="color: #03a5e8; cursor:pointer" (click)="goToResetPsw()">
@@ -218,16 +207,6 @@
             <div *ngIf="hideGoogleAuthBtn" class="auth---divider"></div>
 
 
-            <div class="left-panel-signup-link" (click)="goToSignup()">
-
-              {{ "DontHaveAnAccountYet" | translate }}
-              <span>
-                <!-- {{ "SignUp" | translate }} -->
-                {{ "ContactUs" | translate }}
-              
-              </span>
-
-            </div>
             <!-- <a *ngIf="!passReset && userForm.controls.email.valid" class="help is-info" (click)="resetPassword()">Reset Password for {{userForm.value.email}}?</a>
         <p *ngIf="passReset" class="help is-info">Reset requested. Check your email instructions.</p> -->
 
