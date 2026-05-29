@@ -454,6 +454,10 @@ export class NavbarComponent extends PricingBaseComponent implements OnInit, Aft
   }
 
   getProjectQuotes() {
+    if (!this.projectId || this.projectId === 'undefined' || this.projectId === 'null') {
+      this.logger.log("[NAVBAR][QUOTA-DEBUG] getProjectQuotes skipped - invalid projectId:", this.projectId);
+      return;
+    }
     this.logger.log("[NAVBAR][QUOTA-DEBUG] getProjectQuotes this.projectId -------> : ", this.projectId);
     this.quotesService.getProjectQuotes(this.projectId).then((response) => {
       this.logger.log("[NAVBAR] getProjectQuotes response: ", response);

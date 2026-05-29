@@ -2766,6 +2766,10 @@ export class HomeComponent implements OnInit, OnDestroy, AfterViewInit {
   // No more used
   // -------------------------
   getProjectQuotes() {
+    if (!this.projectId || this.projectId === 'undefined' || this.projectId === 'null') {
+      this.logger.log("[HOME] getProjectQuotes skipped - invalid projectId:", this.projectId);
+      return;
+    }
     this.quotesService.getProjectQuotes(this.projectId).then((response) => {
       this.logger.log("[HOME] getProjectQuotes response: ", response);
       this.project_limits = response;

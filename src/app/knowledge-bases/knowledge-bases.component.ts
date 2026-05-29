@@ -403,6 +403,10 @@ export class KnowledgeBasesComponent extends PricingBaseComponent implements OnI
   }
 
   async getQuotas() {
+    if (!this.id_project || this.id_project === 'undefined' || this.id_project === 'null') {
+      this.logger.log("[KNOWLEDGE-BASES-COMP] - getQuotas skipped - invalid id_project:", this.id_project);
+      return;
+    }
     this.quotas = await this.quotasService.getProjectQuotes(this.id_project).catch((err) => {
       this.logger.error("[KNOWLEDGE-BASES-COMP] - Error getting project quotas: ", err);
     })

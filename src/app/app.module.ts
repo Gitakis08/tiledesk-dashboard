@@ -432,21 +432,10 @@ const appInitializerFn = (appConfig: AppConfigService, brandService: BrandServic
   return async () => {
     // console.log('APP INITIALIZED')
     
-    let loggingLevel = ''
-    if (typeof appConfig.getConfig().logLevel === 'string') {
-      loggingLevel = appConfig.getConfig().logLevel.toUpperCase()
-    }
-    if (appConfig.getConfig().logLevel === undefined) {
-      // console.log('### DSHBRD here 1')
-      loggingLevel = 'DEBUG'
-    }
-
-    if (appConfig.getConfig().logLevel !== undefined) {
-      // console.log('### DSHBRD here 2A')
-      if (appConfig.getConfig().logLevel.length === 0) {
-        // console.log('### DSHBRD here 2B')
-        loggingLevel = 'DEBUG'
-      }
+    const rawLogLevel = appConfig.getConfig().logLevel;
+    let loggingLevel = '';
+    if (typeof rawLogLevel === 'string' && rawLogLevel.length > 0) {
+      loggingLevel = rawLogLevel.toUpperCase();
     }
 
 
@@ -454,13 +443,17 @@ const appInitializerFn = (appConfig: AppConfigService, brandService: BrandServic
       await appConfig.loadAppConfig();
       await brandService.loadBrand();
       // let customLogger = new LoggerService(appConfig);
+      const loadedLogLevel = appConfig.getConfig().logLevel;
+      if (typeof loadedLogLevel === 'string' && loadedLogLevel.length > 0) {
+        loggingLevel = loadedLogLevel.toUpperCase();
+      }
       let chatEngine = appConfig.getConfig().chatEngine
       let uploadEngine = appConfig.getConfig().uploadEngine
       let pushEngine = appConfig.getConfig().pushEngine
 
       // console.log('APP-CONFIG ', appConfig.getConfig() ) 
 
-      if (loggingLevel === 'INFO' || loggingLevel === 'DEBUG') {
+      if (loggingLevel === 'DEBUG') {
         // console.info('%c ### DSHBRD [APP-MODULE-TS] remoteConfig', 'color: #1a73e8', environment.remoteConfig);
         console.info('%c ### DSHBRD [APP-MODULE-TS] appConfig loaded', 'color: #1a73e8');
         console.info('%c ### DSHBRD [APP-MODULE-TS] brandService loaded', 'color: #1a73e8');
@@ -478,7 +471,7 @@ const appInitializerFn = (appConfig: AppConfigService, brandService: BrandServic
       let uploadEngine = appConfig.getConfig().uploadEngine
       let pushEngine = appConfig.getConfig().pushEngine
 
-      if (loggingLevel === 'INFO' || loggingLevel === 'DEBUG') {
+      if (loggingLevel === 'DEBUG') {
         // console.info('%c ### DSHBRD [APP-MODULE-TS] remoteConfig', 'color: #1a73e8', environment.remoteConfig);
         // console.info('%c ### DSHBRD [APP-MODULE-TS] config', 'color: #1a73e8', appConfig.getConfig());
         console.info('%c ### DSHBRD [APP-MODULE-TS] brandService loaded', 'color: #1a73e8');
