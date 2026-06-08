@@ -383,7 +383,12 @@ export class SidebarUserDetailsComponent implements OnInit {
     //   this.logger..log('[SIDEBAR-USER-DETAILS] clickout event.target)', event.target)
     //  this.logger..log('[SIDEBAR-USER-DETAILS] clickout event.target.id)', event.target.id)
     //  this.logger..log('[SIDEBAR-USER-DETAILS] clickout event.target.className)', event.target.classList)
-    const clicked_element_id = event.target.id
+    const targetElement = event.target as HTMLElement;
+    const clicked_element_id = targetElement.id || '';
+    const clickedNgOption = targetElement.closest('.ng-option');
+    const clickedStatusDropdown =
+      targetElement.closest('.teammate-status-in-drawer') ||
+      clickedNgOption?.querySelector('[id^="sidebaravatar_"]');
     if (this.eRef.nativeElement.contains(event.target)) {
       this.logger.log('[SIDEBAR-USER-DETAILS] clicked inside')
     } else {
@@ -393,7 +398,7 @@ export class SidebarUserDetailsComponent implements OnInit {
       this.logger.log('[SIDEBAR-USER-DETAILS] HAS_CLICKED_OPEN_USER_DETAIL ', this.HAS_CLICKED_OPEN_USER_DETAIL)
       // && (!event.target.classList.contains('ng-option'))
       // clicked_element_id !== 'a0da04ac7772' && 
-      if (!clicked_element_id.startsWith("sidebaravatar") && (!event.target.classList.contains('ng-option'))) {
+      if (!clicked_element_id.startsWith("sidebaravatar") && (!targetElement.classList.contains('ng-option')) && !clickedStatusDropdown) {
         this.closeUserDetailSidePanel();
         // }
         this.logger.log('[SIDEBAR-USER-DETAILS] clicked outside')

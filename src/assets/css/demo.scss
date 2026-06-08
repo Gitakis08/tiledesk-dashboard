@@ -2437,8 +2437,20 @@ footer ul {
 }
 
 .teammate-status-in-drawer .ng-dropdown-panel .ng-dropdown-panel-items .ng-option {
+  align-items: center;
   background-color: #2d323e !important;
+  box-sizing: border-box;
   color: #fff !important;
+  cursor: pointer;
+  display: flex !important;
+  min-height: 50px;
+  padding: 0 16px;
+  width: 100%;
+}
+
+.teammate-status-in-drawer .ng-dropdown-panel .ng-dropdown-panel-items .ng-option img,
+.teammate-status-in-drawer .ng-dropdown-panel .ng-dropdown-panel-items .ng-option span {
+  pointer-events: none;
 }
 
 .teammate-status-in-drawer .ng-dropdown-panel .ng-dropdown-panel-items .ng-option.ng-option-marked {
